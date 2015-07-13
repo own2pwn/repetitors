@@ -1,0 +1,2 @@
+html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+h1{margin:.67em 0;font-size:2em}

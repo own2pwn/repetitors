@@ -1,0 +1,8 @@
+# Запретить индексировать катлоги
+#<Directory "/home_1/andrey7/www/mat-repetitor.ru/">
+#    Options -Indexes
+#</Directory>
+
+# Определяем стартовую страницу
+#DirectoryIndex cgi-bin/index.pl
+DirectoryIndex hide.html

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<meta charset=utf-8 />
+<title>JS Bin</title>
+<style type="text/css">
+li{list-style:none}
+.rectangle-list span {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    *padding: .4em;
+    margin: .5em 0 .5em 2.5em;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;   
+}
+ 
+.rectangle-list span:hover {
+    background: #eee;
+}   
+ 
+.rectangle-list span:before {
+    content: counter(1);
+    counter-increment: 1;
+    position: absolute; 
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #fa8072;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+ 
+.rectangle-list span:after {
+    position: absolute; 
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;               
+}
+ 
+.rectangle-list span:hover:after {
+    left: -.5em;
+    border-left-color: #fa8072;             
+}
+
+
+  </style>
+</head>
+<body>
+  
+ <form enctype="multipart/form-data" method="post">
+   <p><input type="file" name="f">
+   <input type="submit" value="Отправить"></p>
+  </form>
+ 
+
+</body>
+</html>
+

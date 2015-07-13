@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<meta charset=utf-8 />
+<title>JS Bin</title>
+<style type="text/css">
+li{list-style:none}
+.rectangle-list span {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    *padding: .4em;
+    margin: .5em 0 .5em 2.5em;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;   
+}
+ 
+.rectangle-list span:hover {
+    background: #eee;
+}   
+ 
+.rectangle-list span:before {
+    content: counter(1);
+    counter-increment: 1;
+    position: absolute; 
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #fa8072;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+ 
+.rectangle-list span:after {
+    position: absolute; 
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;               
+}
+ 
+.rectangle-list span:hover:after {
+    left: -.5em;
+    border-left-color: #fa8072;             
+}
+
+
+  </style>
+</head>
+<body>
+ 
+<!-- <div id="block" style="display:none;"> -->
+  <ul style="width:90%" class=rectangle-list>
+    
+    <li> <span onClick="toggle('block');"  style="color:#B84444;" class=branches_subway > станции метро Калининской ветки:   </span>
+        <ul id="block" style="display:none;">
+            <li> <span> Новокосино         </span></li>
+            <li> <span> Новогиреево        </span></li>
+            <li> <span> Перово             </span></li>
+            <li> <span> Шоссе Энтузиастов  </span></li>   
+            <li> <span> Авиамоторная       </span></li> 
+            <li> <span> Площадь Ильича     </span></li> 
+        </ul>
+     </li>
+
+   </ul>
+<!-- </div> -->
+<div >Свернуть/Развернуть</div>
+
+
+<script type="text/javascript">
+function toggle(id)
+{
+        var e = document.getElementById(id);
+        var dh = gh(id);
+        var elems = e.getElementsByTagName('*');
+        
+        if (e.style.display == "none")
+        {
+                for(var i=0; i<elems.length; i++){vhe(elems[i], "hidden");}
+        
+                e.style.height="1px";
+                e.style.display = "block";
+                for(var i=0;i<=100;i+=5)
+                {
+                        (function()
+                                {
+                                        var pos=i;
+                                        setTimeout(function(){e.style.height = (pos/100)*dh+1+"px";},pos*5);
+                                }
+                        )();
+                }
+                setTimeout(function(){for(var i=0; i<elems.length; i++){elems[i].style.visibility="visible";}},500);
+                return true;
+        }
+        else
+        {
+                var lh=dh-1+"px";
+                
+                for(var i=0; i<elems.length; i++){vhe(elems[i], "hidden");}
+                
+                for (var i=100;i>=0;i-=5)
+                {
+                        (function()
+                                {
+                                        var pos=i;
+                                        setTimeout(function()
+                                        {
+                                                e.style.height = (pos/100)*dh+"px";
+                                                if (pos<=0)
+                                                {
+                                                        e.style.display = "none";
+                                                        e.style.height=lh;
+                                                }
+                                        },1000-(pos*5));
+                                }
+                        )();
+                }
+                return true;
+        }
+        return false;
+}
+function vhe(obj, vh){obj.style.visibility=vh;}
+function gh(id)
+{
+        var e = document.getElementById(id);
+        if(e.style.display == "none")
+        {
+                e.style.visibility = "hidden";
+                e.style.display = "block";
+                dh = e.clientHeight||e.offsetHeight+5; // Высота
+                e.style.display = "none";
+                e.style.visibility = "visible";
+        }
+        else
+        {
+                dh = e.clientHeight||e.offsetHeight+5; // Высота
+        }
+        return dh;
+}
+</script>
+
+</body>
+</html>
+
