@@ -78,6 +78,7 @@ $data .= <<"EOF";
     $refCONTEXT->{'header'}->{'css'}
     $refCONTEXT->{'teacher_menu'}->{'css'}
     $refCONTEXT->{'form_order_call'}->{css}
+    $refCONTEXT->{'links_to_teachers'}->{css}
     $refCONTEXT->{'branch_price'}->{css}
     $refCONTEXT->{'list_districts'}->{css}
     $refCONTEXT->{'footer'}->{css}
@@ -141,6 +142,7 @@ $data .= <<"EOF";
        $refCONTEXT->{'teacher_menu'}->{html}
        $refCONTEXT->{'social_net'}->{html}
        $refCONTEXT->{'form_order_call'}->{html}
+       $refCONTEXT->{links_to_teachers}->{html}
     </div>
 
     <div class="main_table_column_second">

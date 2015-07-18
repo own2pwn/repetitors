@@ -25,7 +25,8 @@ sub CGI_hash {
 sub proccesing_url_keys{
   my ($ref_hash_cgi) = @_;
   my @ar_key_mandatory = ('teacher','region','ph');
-  my $url = '?'; my $count = 0;
+  my $url = '?';
+  my $count = 0;
 
   if ($ref_hash_cgi) {
     foreach my $k (@ar_key_mandatory) {
