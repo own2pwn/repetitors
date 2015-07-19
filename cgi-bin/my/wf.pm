@@ -6,7 +6,16 @@ use strict;
 # Дозапись в произвольной кодировке
 sub add_to_file {
   my($fn,$data)=@_;
-  open (RESULT,'>>'.$fn);
+  open (RESULT,'>>'.$fn) or die "FAILED sub add_to_file: $!";
+  print RESULT $data;
+  close(RESULT);
+}
+
+# Запись в произвольной кодировке
+##############
+sub save_to_file {
+  my($fn,$data)=@_;
+  open (RESULT,'>utf8',$fn) or die "FAILED sub save_to_file: $!";
   print RESULT $data;
   close(RESULT);
 }
@@ -14,7 +23,7 @@ sub add_to_file {
 # Дозапись в кодировке utf8
 sub add_to_file_utf8 {
   my($fn,$data)=@_;
-  open (RESULT,'>>utf8',$fn);
+  open (RESULT,'>>utf8',$fn) or die "FAILED sub add_to_file_utf8: $!";
   print RESULT $data;
   close(RESULT);
 }
@@ -23,10 +32,11 @@ sub add_to_file_utf8 {
 ##############
 sub save_to_file_utf8 {
   my($fn,$data)=@_;
-  open (RESULT,'>utf8',$fn);
+  open (RESULT,'>utf8',$fn) or die "FAILED sub save_to_file_utf8: $!";
   print RESULT $data;
   close(RESULT);
 }
+
 
 # Читаем файл и возвращаем строку
 sub read_file_return_str {

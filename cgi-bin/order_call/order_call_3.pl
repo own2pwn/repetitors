@@ -8,7 +8,7 @@ use strict;
 
 use CGI;
 
-use lib './';
+use lib '../';
 use config;
 my $c = config::settings();
 
@@ -17,19 +17,23 @@ my $c = config::settings();
 use base_teachers;
 use module__metrica_analytics_js;
 
-use view_order_call;
 
-use lib './css/';
+
+use lib '../css/';
 use module__button_main_page;
 
-use lib './my/';
+use lib '../my/';
 use cgi_url;
 use http;
 use get_time;
 use send_mail;
 use collapse;
 
-my %CONTEXT = ('min' => 0, config => $c, collapse => $c->{collapse} );
+use lib './';
+# use routing_order_call;
+use view_order_call;
+
+my %CONTEXT = ('min' => 0, config => $c, collapse => $c->{collapse}, domain => $c -> {domain} );
 base_teachers::start(\%CONTEXT,'base_teachers');
 
 
@@ -40,46 +44,46 @@ Routing();
 # test_start();
 
 
-sub Routing {
-  my $teacher_id = ($CONTEXT{'hash_cgi'} && $CONTEXT{'hash_cgi'} -> {'teacher'}) ? $CONTEXT{'hash_cgi'} -> {'teacher'} : '';
-  my $region = ($CONTEXT{'hash_cgi'} && $CONTEXT{'hash_cgi'} -> {'region'}) ? $CONTEXT{'hash_cgi'} -> {'region'} : '';
-  my $ph = ($CONTEXT{'hash_cgi'} && $CONTEXT{'hash_cgi'} -> {'ph'}) ? $CONTEXT{'hash_cgi'} -> {'ph'} : '';
+# sub Routing {
+#   my $teacher_id = ($CONTEXT{'hash_cgi'} && $CONTEXT{'hash_cgi'} -> {'teacher'}) ? $CONTEXT{'hash_cgi'} -> {'teacher'} : '';
+#   my $region = ($CONTEXT{'hash_cgi'} && $CONTEXT{'hash_cgi'} -> {'region'}) ? $CONTEXT{'hash_cgi'} -> {'region'} : '';
+#   my $ph = ($CONTEXT{'hash_cgi'} && $CONTEXT{'hash_cgi'} -> {'ph'}) ? $CONTEXT{'hash_cgi'} -> {'ph'} : '';
 
-  my $formed_url = $CONTEXT{'formed_url'};
-  my $cur_url = '';
+#   my $formed_url = $CONTEXT{'formed_url'};
+#   my $cur_url = '';
 
-  # Главная страница
-  if ($ENV{'QUERY_STRING'} eq '' && $ENV{'REQUEST_URI'} eq '/cgi-bin/order_call_3.pl') {
-    # $teacher_id = 1;
-    $CONTEXT{'teacher_id'} = $teacher_id;
-    $cur_url = '/';
-    http::redirect(302,$c->{domain});
-  }
-  # Есть параметры в URL
-  else {
-    $cur_url = '?'.$ENV{'QUERY_STRING'};
-    if ( $formed_url eq $cur_url ) {
-      if ( $teacher_id < 1) {
-        http::redirect(301,$c->{domain});
-      }
-      # TODO: Сделать forward на страницу данного преподавателя, а не на главную страницу
-      elsif (!$CONTEXT{'base_teachers'} -> {$teacher_id} || $region eq '' || $ph eq '') {
-        http::redirect(302,$c->{domain});
-      }
-      else {
-        $CONTEXT{'teacher_id'} = $teacher_id;
-        $CONTEXT{'region'} = $region;
-        $CONTEXT{'ph'} = $ph;
-        App();
-      }
-    }
-    # Если есть лишние ключи
-    else {
-      http::redirect(302,$c->{domain}.'cgi-bin/order_call_3.pl'.$formed_url);
-    }
-  }
+#   # Главная страница
+#   if ($ENV{'QUERY_STRING'} eq '' && $ENV{'REQUEST_URI'} eq '/cgi-bin/order_call_3.pl') {
+#     # $teacher_id = 1;
+#     $CONTEXT{'teacher_id'} = $teacher_id;
+#     $cur_url = '/';
+#     http::redirect(302,$c->{domain});
+#   }
+#   # Есть параметры в URL
+#   else {
+#     $cur_url = '?'.$ENV{'QUERY_STRING'};
+#     if ( $formed_url eq $cur_url ) {
+#       if ( $teacher_id < 1) {
+#         http::redirect(301,$c->{domain});
+#       }
+#       # TODO: Сделать forward на страницу данного преподавателя, а не на главную страницу
+#       elsif (!$CONTEXT{'base_teachers'} -> {$teacher_id} || $region eq '' || $ph eq '') {
+#         http::redirect(302,$c->{domain});
+#       }
+#       else {
+#         $CONTEXT{'teacher_id'} = $teacher_id;
+#         $CONTEXT{'region'} = $region;
+#         $CONTEXT{'ph'} = $ph;
+#         App();
+#       }
+#     }
+#     # Если есть лишние ключи
+#     else {
+#       http::redirect(302,$c->{domain}.'cgi-bin/order_call_3.pl'.$formed_url);
+#     }
+#   }
 
-}
+# }
 
 
 sub App {
