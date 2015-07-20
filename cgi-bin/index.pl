@@ -54,7 +54,7 @@ routing_index::start(\%CONTEXT);
 sub App {
                       print http::header();
 
-                      module__read_static_data::start(\%CONTEXT,$CONTEXT{'teacher_id'});
+                      module__read_static_data::start(\%CONTEXT,$CONTEXT{'teacher'});
 
                       module__header::start(\%CONTEXT,'header');
                       module__menu::start(\%CONTEXT,'teacher_menu');
@@ -82,7 +82,7 @@ sub App {
 
 
 sub test_start {
-  $CONTEXT{'teacher_id'} = 1;
+  $CONTEXT{'teacher'} = 1;
   App();
 }
 

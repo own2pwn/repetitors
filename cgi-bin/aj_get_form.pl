@@ -12,11 +12,11 @@ my %CONTEXT = ('min' => 0 );
 base_teachers::start(\%CONTEXT,'base_teachers');
 
 my $teacher_id = int(CGI::param("teacher"));
-# $CONTEXT{'teacher_id'} = 1;
+# $CONTEXT{'teacher'} = 1;
 
 if ($ENV{'QUERY_STRING'} eq '') {
   $teacher_id = 1;
-  $CONTEXT{'teacher_id'} = 1;
+  $CONTEXT{'teacher'} = 1;
   start(\%CONTEXT,'get_form');
 }
 elsif ($teacher_id < 1) {
@@ -26,7 +26,7 @@ elsif (!$CONTEXT{'base_teachers'} -> {$teacher_id}) {
   redirect(302,'http://127.0.0.1/');
 }
 else {
-  $CONTEXT{'teacher_id'} = $teacher_id;
+  $CONTEXT{'teacher'} = $teacher_id;
   start(\%CONTEXT,'get_form');
 }
 
@@ -36,7 +36,7 @@ sub start {
   my ($refCONTEXT,$key) = @_;
 
   # my %hash_teach = %{$refCONTEXT -> {'base_teachers'}};
-  # my $teacher_id = $refCONTEXT -> {'teacher_id'};
+  # my $teacher_id = $refCONTEXT -> {'teacher'};
   form_order_call($refCONTEXT,$key);
   # print $CONTEXT{$key}{'html'};
   # print $CONTEXT{$key}{'css'};
@@ -106,7 +106,7 @@ sub form_order_call {
   ";
 
   my %hash_teach = %{$refCONTEXT -> {'base_teachers'}};
-  my $teacher_id = $refCONTEXT -> {'teacher_id'};
+  my $teacher_id = $refCONTEXT -> {'teacher'};
 
   my %key_regions = %{$hash_teach{$teacher_id} -> {'key_regions'}};
   # Собираем строку (массив JS) имен полей и полей заказа (одновременно) звонка
@@ -134,9 +134,10 @@ sub form_order_call {
 
 
 
-    text_all_form+="<form action='/cgi-bin/order_call_3.pl'>";
-       text_all_form+= "<input style='display:none' type='text' name='teacher' value='$teacher_id'>";
-       text_all_form+= "<input style='display:none' type='text' name='region' value='" + attributeFiled + "'>";
+    text_all_form+="<form action='/cgi-bin/order_call/order_call_3.pl'>";
+       text_all_form+= "<input type=hidden name='action' value='order_call'>";
+       text_all_form+= "<input type=hidden name='id' value='$teacher_id'>";
+       text_all_form+= "<input type=hidden name='region' value='" + attributeFiled + "'>";
        text_all_form+="<input class=form_style ";
                  text_all_form+= "name='ph'";
                  text_all_form+= "type='text' maxlength='255'";

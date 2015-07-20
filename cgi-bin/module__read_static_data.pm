@@ -4,7 +4,7 @@ use strict;
 
 # ЧИТАЕМ СТАТИЧЕСКИЕ ДАННЫЕ ИЗ ФАЙЛА ПРЕПОДАВАТЕЛЯ
 
-# my %CONTEXT = ('min' => 0, 'teacher_id' => 2);
+# my %CONTEXT = ('min' => 0, 'teacher' => 2);
 # start(\%CONTEXT,2);
 
 #########################

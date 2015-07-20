@@ -26,7 +26,8 @@ sub view_index {
   <!DOCTYPE html>
 <html><head>
 
-<meta charset=utf-8>
+<meta charset=UTF-8>
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
 <meta http-equiv="Refresh" Content="120; URL=$refCONTEXT->{'path_to_teacher_page'}">
 

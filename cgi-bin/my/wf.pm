@@ -6,7 +6,7 @@ use strict;
 # Дозапись в произвольной кодировке
 sub add_to_file {
   my($fn,$data)=@_;
-  open (RESULT,'>>'.$fn) or die "FAILED sub add_to_file: $!";
+  open (RESULT,'>>'.$fn) ||  print STDERR "FAILED sub add_to_file: $!\n";
   print RESULT $data;
   close(RESULT);
 }
@@ -15,7 +15,7 @@ sub add_to_file {
 ##############
 sub save_to_file {
   my($fn,$data)=@_;
-  open (RESULT,'>utf8',$fn) or die "FAILED sub save_to_file: $!";
+  open (RESULT,'>',$fn) ||  print STDERR "FAILED sub save_to_file: $!\n";
   print RESULT $data;
   close(RESULT);
 }
@@ -23,7 +23,7 @@ sub save_to_file {
 # Дозапись в кодировке utf8
 sub add_to_file_utf8 {
   my($fn,$data)=@_;
-  open (RESULT,'>>utf8',$fn) or die "FAILED sub add_to_file_utf8: $!";
+  open (RESULT,'>>utf8',$fn) ||  print STDERR "FAILED sub add_to_file_utf8: $!\n";
   print RESULT $data;
   close(RESULT);
 }
@@ -32,7 +32,7 @@ sub add_to_file_utf8 {
 ##############
 sub save_to_file_utf8 {
   my($fn,$data)=@_;
-  open (RESULT,'>utf8',$fn) or die "FAILED sub save_to_file_utf8: $!";
+  open (RESULT,'>utf8',$fn) ||  print STDERR "FAILED sub save_to_file_utf8: $!\n";
   print RESULT $data;
   close(RESULT);
 }
@@ -43,7 +43,7 @@ sub read_file_return_str {
   my $path = shift;
   my $ info = '';
   # создаем файловый дескриптор
-  open FID, $path or die "FAILED to open $path: $!\n";
+  open FID, $path ||  print STDERR "FAILED to open $path: $!\n";
   while (<FID>) {
     $info.=$_;
   }

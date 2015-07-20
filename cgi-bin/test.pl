@@ -1,60 +1,34 @@
 #!/usr/bin/perl
 
 use strict;
-use 5.016;
-use Tie::IxHash;
-use Time::HiRes;
+# use 5.016;
+
+# use Data::Dumper;
 
 
 
+use Digest::MD5  qw(md5_hex);
 
-sub sort_keys_hash {
-  my %hash;
-  tie %hash, "Tie::IxHash";
-  init(\%hash);
+my $PASSWD = 'any string…';
 
-  # %hash = ('москва' => 3, 'воронеж' => 2, 'рязань' => 1);
-  # $hash{'москва'} = 3;
-  # $hash{'воронеж'} = 2;
-  # $hash{'рязань'} = 1;
+get_keys('Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:39.0) Gecko/20100101 Firefox/39.0');
 
-  foreach my $key (keys %hash) {
-    # print "$key === $hash{$key}\n";
-  }
+#
+sub get_keys {
+  my $user_agent = shift;
+  my @passset = ('a'..'z','A'..'Z');
+  # print Dumper(\@passset);
+  my $A = '';
+  for (my $i = 0; $i < 12; $i++) { $A.= $passset[int(rand($#passset + 1))]; }
+  $A.= time();
+  my $B = md5_hex($A, $PASSWD, $user_agent);
+  say $A;
+  say $B;
+  return ($A, $B);
 }
 
-sub keys_hash {
-  my %hash;
-  init(\%hash);
-  # %hash = ('москва' => 3, 'воронеж' => 2, 'рязань' => 1);
-  # $hash{'москва'} = 3;
-  # $hash{'воронеж'} = 2;
-  # $hash{'рязань'} = 1;
-
-  foreach my $key (keys %hash) {
-    # print "$key === $hash{$key}\n";
-  }
-}
-
-
-sub init {
-  my $refhash = shift;
-  for (my $i = 0; $i < 1000000; $i++) {
-    $refhash -> {$i} =$i;
-  }
-}
-
-
-
-# run_test('keys_hash',\&keys_hash);
-run_test('sort_keys_hash',\&sort_keys_hash);
-##########################################
-sub run_test {
-  my ($test_name,$func,$pre_run)=@_;
-
-  my($seconds1, $microseconds1) = Time::HiRes::gettimeofday();
-  &$func();
-                                       # 1 параметр старт, 2 параметр текущее, считаем интервал
-  my $elapsed=Time::HiRes::tv_interval([$seconds1, $microseconds1], [Time::HiRes::gettimeofday()]);
-  print $test_name.' = '.sprintf("%.3f",$elapsed*1000)."ms\n";
+#
+sub check_keys {
+  my($A, $B, $user_agent) = @_;
+  return ($B eq md5_hex($A, $PASSWD, $user_agent)) ? 1 : 0;
 }

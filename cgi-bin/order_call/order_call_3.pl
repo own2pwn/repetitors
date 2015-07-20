@@ -28,9 +28,10 @@ use http;
 use get_time;
 use send_mail;
 use collapse;
+use wf;
 
 use lib './';
-# use routing_order_call;
+use routing_order_call;
 use view_order_call;
 
 my %CONTEXT = ('min' => 0, config => $c, collapse => $c->{collapse}, domain => $c -> {domain} );
@@ -40,7 +41,8 @@ base_teachers::start(\%CONTEXT,'base_teachers');
 $CONTEXT{'hash_cgi'} = cgi_url::CGI_hash();
 $CONTEXT{'formed_url'} = cgi_url::proccesing_url_keys($CONTEXT{'hash_cgi'});
 
-Routing();
+$CONTEXT{App} = \&App;
+routing_order_call::start(\%CONTEXT);
 # test_start();
 
 
@@ -53,9 +55,9 @@ Routing();
 #   my $cur_url = '';
 
 #   # Главная страница
-#   if ($ENV{'QUERY_STRING'} eq '' && $ENV{'REQUEST_URI'} eq '/cgi-bin/order_call_3.pl') {
+#   if ($ENV{'QUERY_STRING'} eq '' && $ENV{'REQUEST_URI'} eq $ENV{SCRIPT_NAME}) {
 #     # $teacher_id = 1;
-#     $CONTEXT{'teacher_id'} = $teacher_id;
+#     $CONTEXT{'teacher'} = $teacher_id;
 #     $cur_url = '/';
 #     http::redirect(302,$c->{domain});
 #   }
@@ -71,7 +73,7 @@ Routing();
 #         http::redirect(302,$c->{domain});
 #       }
 #       else {
-#         $CONTEXT{'teacher_id'} = $teacher_id;
+#         $CONTEXT{'teacher'} = $teacher_id;
 #         $CONTEXT{'region'} = $region;
 #         $CONTEXT{'ph'} = $ph;
 #         App();
@@ -79,7 +81,7 @@ Routing();
 #     }
 #     # Если есть лишние ключи
 #     else {
-#       http::redirect(302,$c->{domain}.'cgi-bin/order_call_3.pl'.$formed_url);
+#       http::redirect(302,$c->{domain}.$ENV{SCRIPT_NAME}.$formed_url);
 #     }
 #   }
 
@@ -108,7 +110,7 @@ sub App {
 # и в случае отсуствия у преподавател имени и неправильного региона
 sub Validate_Teacher_Name {
   my $refCONTEXT = shift;
-  my $teacher_id = $refCONTEXT -> {'teacher_id'};
+  my $teacher_id = $refCONTEXT -> {'teacher'};
   # Счетчик валидации телефона
   # ok –– все правильно, phone_isnot_right –– ошибка в телефоне
   $refCONTEXT -> {'correctness_data'} = 'ok';
@@ -131,7 +133,7 @@ sub Validate_Teacher_Name {
 # Проверка наличия у преподавателя названия региона
 sub Validate_Region_Name {
   my $refCONTEXT = shift;
-  my $teacher_id = $refCONTEXT -> {'teacher_id'};
+  my $teacher_id = $refCONTEXT -> {'teacher'};
   my $region_url = $refCONTEXT -> {'region'};
   my $ph = $refCONTEXT -> {'ph'};
 
@@ -162,7 +164,7 @@ sub Validate_Region_Name {
 sub Validate_Phone {
   my $refCONTEXT = shift;
   my $ph = $refCONTEXT->{'ph'};
-  if ($ph!~/[\d\-\+()]+/i) {
+  if ($ph!~/[\d\-\+()]{9,}/i) {
     $refCONTEXT -> {'correctness_data'} = 'phone_isnot_right';
   }
 }
@@ -209,7 +211,7 @@ EOF
 sub Preparation_For_Sending_Email {
   my $refCONTEXT = shift;
   # Почтовые ящики
-  my @mailboxs = ('qwertyzxcv526@gmail.com', 'marianna.repetitor@gmail.com');
+  my @mailboxs = ('qwertyzxcv526@gmail.com', 'marianna.repetitor@gmail.com', 'mat.repetitors@yandex.ru');
   my $subject = 'Заказали звонок '.get_time::time_email();
 
   my $teacher_text = $refCONTEXT -> {'teacher_text_email'};
@@ -238,15 +240,13 @@ sub Preparation_For_Sending_Email {
 # Строим путь к странице преподавателя: для кнокпки Вернуться на страницу преподавателя и refresh через 30 сек
 sub build_path_to_teacher_page {
   my $refCONTEXT = shift;
-  my %hash_buld;
-  $hash_buld{'teacher'} = $refCONTEXT -> {'hash_cgi'} -> {'teacher'};
-  return $c -> {domain}.cgi_url::proccesing_url_keys(\%hash_buld);
+  return $c -> {domain}.cgi_url::proccesing_url_keys({'action' => 'teacher', 'id' => $refCONTEXT->{'teacher'}});
 }
 
 
 # Тестовая функция запуска без роутинга
 sub test_start{
-  $CONTEXT{'teacher_id'} = int(CGI::param("teacher"));
+  $CONTEXT{'teacher'} = int(CGI::param("id"));
   $CONTEXT{'region'} = CGI::param("region");
   $CONTEXT{'ph'} = CGI::param("ph");
   App();

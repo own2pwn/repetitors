@@ -38,7 +38,7 @@ sub links_to_teachers {
 
   # { id => { 'title' => 'Репетитор по математике (Люберцы, Балашиха, Железнодорожный, Волжская, Марьино)',}, ..}
   my $hash_teach_links = $refCONTEXT -> {'base_links_to_teachers'};
-  my $teacher_id = $refCONTEXT -> {'teacher_id'};
+  my $teacher_id = $refCONTEXT -> {'teacher'};
   my $domain = $refCONTEXT -> {domain};
   foreach my $id (keys %$hash_teach_links) {
     next if $id == $teacher_id;
@@ -62,10 +62,10 @@ sub links_to_teachers {
       font-size: 90%;
       font-weight: 100;
       text-shadow: none;
-      color: #27bc85;
+      color: #3333FF;
       text-decoration: underline;
   }
-  .links_teachers a:hover{color:#194d3b}
+  .links_teachers a:hover{color:#CC3366}
 
 EOF
 
@@ -87,9 +87,7 @@ EOF
 # Строим ссылки на страницы преподавателей
 sub build_path_to_teacher_page {
   my ($domain,$teacher_id) = @_;
-  my %hash_buld;
-  $hash_buld{'teacher'} = $teacher_id;
-  return $domain.cgi_url::proccesing_url_keys(\%hash_buld);
+  return $domain.cgi_url::proccesing_url_keys({'action' => 'teacher', 'id' => $teacher_id});
 }
 
 1;

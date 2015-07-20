@@ -70,7 +70,7 @@ sub Routing {
   # print "<p>Собранный: $formed_url</p>";
 
   if ($ENV{'QUERY_STRING'} eq '' && $ENV{'REQUEST_URI'} eq '/cgi-bin/test.pl') {
-    # $teacher_id = 1; $CONTEXT{'teacher_id'} = 1;
+    # $teacher_id = 1; $CONTEXT{'teacher'} = 1;
     print $head;
     $cur_url = '/';
     print "<p>Текущий url $cur_url</p>";
@@ -90,7 +90,7 @@ sub Routing {
         # print "<br><b> Редирект 302 на http://127.0.0.1/</b>";
       }
       else {
-        # $CONTEXT{'teacher_id'} = $teacher_id;
+        # $CONTEXT{'teacher'} = $teacher_id;
         print $head;
         print "<br><b>Запуск приложения!</b>";
         App();

@@ -24,7 +24,7 @@ sub view_index {
   my ($refCONTEXT,$key) = @_;
 
 my $yandex_verifycation = '';
-if ($refCONTEXT -> {'teacher_id'} == 1) {$yandex_verifycation = "<meta name='yandex-verification' content='5f315588ebc8a9c3' />";}
+if ($refCONTEXT -> {'teacher'} == 1) {$yandex_verifycation = "<meta name='yandex-verification' content='5f315588ebc8a9c3' />";}
 
   my $data = <<"EOF";
   <!DOCTYPE html>

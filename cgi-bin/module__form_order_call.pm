@@ -22,7 +22,7 @@ sub form_order_call {
   my ($refCONTEXT,$key) = @_;
 
   my %hash_teach = %{$refCONTEXT -> {'base_teachers'}};
-  my $teacher_id = $refCONTEXT -> {'teacher_id'};
+  my $teacher_id = $refCONTEXT -> {'teacher'};
 
   my %key_regions = %{$hash_teach{$teacher_id} -> {'key_regions'}};
   my $html_form_order_call = "<div id=forms style='width:90%;margin-top:20px;'>";
@@ -57,7 +57,7 @@ sub form_order_call {
       }
   ';
 
-  # добавляем id репетитора ($refCONTEXT->{'teacher_id'})
+  # добавляем id репетитора ($refCONTEXT->{'teacher'})
   my $js_form_order_call =<<"EOF";
   _R('cgi-bin/aj_get_form.pl?teacher=$teacher_id',null,function(Xhr) { get_form(Xhr);},undefined,undefined);
 

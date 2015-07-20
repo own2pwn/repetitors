@@ -22,7 +22,7 @@ sub menu {
   my ($refCONTEXT,$key) = @_;
 
   my %hash_teach = %{$refCONTEXT -> {'base_teachers'}};
-  my $teacher_id = $refCONTEXT -> {'teacher_id'};
+  my $teacher_id = $refCONTEXT -> {'teacher'};
 
   my @teacher_menu = @{$hash_teach{$teacher_id} -> {'teacher_menu'}};
   my $html_menu =<<"EOF";
