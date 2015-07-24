@@ -50,11 +50,45 @@ sub header {
   </div>
   ";
 
-  my $js_header ='
-  ';
+  # Загрузка веб-шрифта в loacalStorage
+  my $js_header ="
+  (function  () {
+    if (smartBrowser()) {
+      if (!localStorage.tangerine || /Tangerine/.test(localStorage.tangerine) !== true) {
+        _R('fonts/tangerine.css', null, function(Xhr) {
+          localStorage.tangerine = Xhr.responseText;
+          addFont();
+        });
+      } else {
+        addFont();
+      }
+    } else {
+      addFontLink();
+    }
+
+    function addFont() {
+      var style = document.createElement('style');
+      style.rel = 'stylesheet';
+      document.head.appendChild(style);
+      style.textContent = localStorage.tangerine;
+    }
+
+    function addFontLink() {
+      var style = document.createElement('link');
+      style.rel = 'stylesheet';
+      style.href = 'http://fonts.googleapis.com/css?family=Tangerine';
+      document.head.appendChild(style);
+    }
+
+    function smartBrowser () {
+      return ('querySelector' in document && 'localStorage' in window && 'addEventListener' in window) ? true : false;
+    }
+  }());
+  ";
 
   my $js_header_min ='
   ';
+
   $js_header = ( $refCONTEXT -> {'min'} == 1 ) ? $js_header_min : $js_header;
   $refCONTEXT -> {$key} -> {'css'} = $css_header;
   $refCONTEXT -> {$key} -> {'html'} = $html_header;

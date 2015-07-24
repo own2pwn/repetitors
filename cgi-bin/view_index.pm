@@ -16,15 +16,21 @@ sub start {
   # print $CONTEXT{$key};
 }
 
-
+  # \@font-face {
+  #   font-family: 'Tangerine';
+  #   font-style: normal;
+  #   font-weight: 400;
+  #   src: local('Tangerine'), url(fonts/tangerine.woff) format('woff');
+  # }
 
 #
 # ----------------------------------------------------- VIEW ПЕРВОЙ СТРАНИЦЫ И СТРАНИЦ ПРЕПОДАВАТЕЛЕЙ -------------------------------------------------------------
 sub view_index {
   my ($refCONTEXT,$key) = @_;
 
+my $teacher_id = $refCONTEXT -> {'teacher'};
 my $yandex_verifycation = '';
-if ($refCONTEXT -> {'teacher'} == 1) {$yandex_verifycation = "<meta name='yandex-verification' content='5f315588ebc8a9c3' />";}
+if ($teacher_id == 1) {$yandex_verifycation = "<meta name='yandex-verification' content='5f315588ebc8a9c3' />";}
 
   my $data = <<"EOF";
   <!DOCTYPE html>
@@ -37,12 +43,8 @@ if ($refCONTEXT -> {'teacher'} == 1) {$yandex_verifycation = "<meta name='yandex
   $refCONTEXT->{'keywords'}->{html}
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-
-
-  <!--- Google шрифты строчкой ниже  -->
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
   <style>
+
   /*Базовые стили*/
   $refCONTEXT->{'base_css'}->{css}
 
@@ -74,15 +76,16 @@ EOF
   $data.= column_css::column('.main_table_column_second', 'width: 53%;', 'padding: 10px 1%;');
   $data.= column_css::column('.main_table_column_third',  'width: 20%;', 'padding: 10px 1%;');
 
-$data .= <<"EOF";
-    $refCONTEXT->{'header'}->{'css'}
-    $refCONTEXT->{'teacher_menu'}->{'css'}
-    $refCONTEXT->{'form_order_call'}->{css}
-    $refCONTEXT->{'links_to_teachers'}->{css}
-    $refCONTEXT->{'branch_price'}->{css}
-    $refCONTEXT->{'list_districts'}->{css}
-    $refCONTEXT->{'footer'}->{css}
+  $data.= $refCONTEXT->{'header'}->{css};
+  $data.= $refCONTEXT->{'teacher_menu'}->{css};
+  $data.= $refCONTEXT->{'form_order_call'}->{css};
+  $data.= $refCONTEXT->{'links_to_teachers'}->{css};
+  $data.= $refCONTEXT->{'branch_price'}->{css};
+  $data.= $refCONTEXT->{'list_districts'}->{css};
+  $data.= $refCONTEXT->{'footer'}->{css};
 
+
+$data .= <<"EOF";
     \@media screen and (max-width: 980px) {
       .logo{font-size: 340%;}
       /*Если меньше 980, то картинку All.jpg убираем*/
@@ -129,7 +132,9 @@ $data .= <<"EOF";
 
   </style>
   </head>
+EOF
 
+$data .= <<"EOF";
   <body>
   <!-- Главный div , в который все завернуто-->
   <div style="max-width:1000px;margin:0px auto;">
@@ -139,12 +144,19 @@ $data .= <<"EOF";
     <!-- Таблица , в который 3 ячейки: первая это меню, вторая  это тексты, а третья это колонка картинок -->
 
     <div class="main_table_column_first">
-       $refCONTEXT->{'teacher_menu'}->{html}
-       $refCONTEXT->{'social_net'}->{html}
-       $refCONTEXT->{'form_order_call'}->{html}
-       $refCONTEXT->{links_to_teachers}->{html}
-    </div>
-
+EOF
+       $data.= $refCONTEXT->{'teacher_menu'}->{html};
+       if ($teacher_id == 1) {
+         $data.= $refCONTEXT->{'form_order_call'}->{html};
+         $data.= $refCONTEXT->{links_to_teachers}->{html};
+       }
+       else {
+        $data.= $refCONTEXT->{links_to_teachers}->{html};
+        $data.= $refCONTEXT->{'form_order_call'}->{html};
+       }
+       $data.= $refCONTEXT->{'social_net'}->{html}
+    .'</div>';
+$data.= <<"EOF";
     <div class="main_table_column_second">
       $refCONTEXT->{'about_teacher'}->{html}
 
@@ -168,7 +180,6 @@ $data .= <<"EOF";
   </div>
 
   $refCONTEXT->{'footer'}->{'html'}
-
   <script>
     var D = document;
     var H = D.getElementsByTagName("head")[0];
@@ -183,9 +194,10 @@ $data .= <<"EOF";
 
     $refCONTEXT->{'insert_contact_js'}->{js}
     $refCONTEXT->{'form_order_call'}->{js}
+    $refCONTEXT->{'header'}->{js}
   </script>
 
-  $refCONTEXT->{'metrica_analytics_js'}->{js}
+  /*$refCONTEXT->{'metrica_analytics_js'}->{js}*/
 
 
   </body>

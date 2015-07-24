@@ -16,7 +16,6 @@ sub start {
 
 
 
-
 # ----------------------------------------------------- МЕНЮ ДЛЯ САЙТА -------------------------------------------------------------
 sub menu {
   my ($refCONTEXT,$key) = @_;
@@ -26,8 +25,8 @@ sub menu {
 
   my @teacher_menu = @{$hash_teach{$teacher_id} -> {'teacher_menu'}};
   my $html_menu =<<"EOF";
-  <span style='font-family:Comic Sans MS,Helvetica,cursive;font-size: 85%;'>Навигация:</span>
-  <ul id=menu>\n
+    <span style='font-family:Comic Sans MS,Helvetica,cursive;font-size: 85%;'>Навигация:</span>
+    <ul id=menu>\n
 EOF
   foreach my $el_menu (@teacher_menu) {
     my $text_menu = $el_menu->[0];

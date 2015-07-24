@@ -57,7 +57,11 @@ sub links_to_teachers {
 
 # .links_teachers a:hover{color:#666666}
   my $css_links_to_teachers=<<"EOF";
-  .links_teachers {margin-top:52px}
+  .links_teachers {
+    margin-top:20px;
+    border-top:2px solid #999;
+    padding-top:20px
+  }
   .links_teachers a {
       font-size: 90%;
       font-weight: 100;

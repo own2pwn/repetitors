@@ -25,7 +25,7 @@ sub form_order_call {
   my $teacher_id = $refCONTEXT -> {'teacher'};
 
   my %key_regions = %{$hash_teach{$teacher_id} -> {'key_regions'}};
-  my $html_form_order_call = "<div id=forms style='width:90%;margin-top:20px;'>";
+  my $html_form_order_call = "<div id=forms style='width:90%;margin-top:20px;border-top:2px solid #999;'>";
 
   foreach my $regions (sort { $key_regions{$a} cmp $key_regions{$b} } keys %key_regions ) {
     my $field_name = $key_regions{$regions}->[0];
