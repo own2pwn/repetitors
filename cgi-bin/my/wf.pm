@@ -45,6 +45,7 @@ sub read_file_return_str {
   # создаем файловый дескриптор
   open FID, $path ||  print STDERR "FAILED to open $path: $!\n";
   while (<FID>) {
+    chomp;
     $info.=$_;
   }
   close FID;

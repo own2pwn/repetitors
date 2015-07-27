@@ -160,10 +160,10 @@ $data.= <<"EOF";
     <div class="main_table_column_second">
       $refCONTEXT->{'about_teacher'}->{html}
 
-      $refCONTEXT->{'about_classroom'}->{html}
-      $refCONTEXT->{'branch_price'}->{html}
       $refCONTEXT->{'about_individual'}->{html}
       $refCONTEXT->{'individual_price'}->{html}
+      $refCONTEXT->{'about_classroom'}->{html}
+      $refCONTEXT->{'branch_price'}->{html}
       $refCONTEXT->{'about_list_districts'}->{html}
       $refCONTEXT->{'list_districts'}->{html}
 
@@ -197,7 +197,7 @@ $data.= <<"EOF";
     $refCONTEXT->{'header'}->{js}
   </script>
 
-  /*$refCONTEXT->{'metrica_analytics_js'}->{js}*/
+  $refCONTEXT->{'metrica_analytics_js'}->{js}
 
 
   </body>

@@ -4,8 +4,8 @@ use strict;
 
 # ЧИТАЕМ СТАТИЧЕСКИЕ ДАННЫЕ ИЗ ФАЙЛА ПРЕПОДАВАТЕЛЯ
 
-# my %CONTEXT = ('min' => 0, 'teacher' => 2);
-# start(\%CONTEXT,2);
+# my %CONTEXT = ('min' => 0);
+# start(\%CONTEXT,1);
 
 #########################
 sub start {
@@ -32,14 +32,15 @@ sub read_static_data {
 sub read_static {
   my ($refCONTEXT, $path) = @_;
   # print "Папка $path\n";
-  my $info = read_file_return_str($path);
+  my $info = wf::read_file_return_str($path);
+  $info =~s/#[^#]+#//g;
   # print "Данные из файла $info\n";
-  my ($title, $description, $keywords, $about_teacher, $about_classroom, $about_individual, $about_list_districts, $ordering_works) = split(/@@@@/,$info);
-  $refCONTEXT -> {'title'} -> {html} = $title;
-  $refCONTEXT -> {'description'} -> {html} = $description;
-  $refCONTEXT -> {'keywords'} -> {html} = $keywords;
-  $refCONTEXT -> {'about_classroom'} -> {html} = $about_classroom;
+  my ($title, $description, $keywords, $about_teacher, $about_individual, $about_classroom, $about_list_districts, $ordering_works) = split(/@@@@/,$info);
+  $refCONTEXT -> {'title'} -> {html} = view_title($title);
+  $refCONTEXT -> {'description'} -> {html} = view_description($description);
+  $refCONTEXT -> {'keywords'} -> {html} = view_keywords($keywords);
   $refCONTEXT -> {'about_individual'} -> {html} = $about_individual;
+  $refCONTEXT -> {'about_classroom'} -> {html} = $about_classroom;
   $refCONTEXT -> {'about_list_districts'} -> {html} = $about_list_districts;
   $refCONTEXT -> {'ordering_works'} -> {html} = $ordering_works;
 
@@ -54,16 +55,21 @@ sub read_static {
 
 }
 
-sub read_file_return_str {
-  my $path = shift;
-  my $ info = '';
-  # создаем файловый дескриптор
-  open FID, $path or die "FAILED to open $path: $!\n";
-  while (<FID>) {
-    $info.=$_;
-  }
-  close FID;
-  return $info;
+sub view_title {
+  my $title = shift;
+  return '<title>'.$title.'</title>';
+}
+
+sub view_description {
+  my $description = shift;
+  $description =~s/^\s+//;
+  return '<meta name="Description" content="'.$description.'">';
+}
+
+sub view_keywords {
+  my $keywords = shift;
+  $keywords =~s/^\s+//;
+  return '<meta name="Keywords" content="'.$keywords.'">';
 }
 
 sub print_on_monitor {
@@ -82,8 +88,8 @@ sub print_on_monitor {
   print "description === $description\n\n";
   print "keywords === $keywords\n\n";
   print "about_teacher === $about_teacher\n\n";
-  print "about_classroom === $about_classroom\n\n";
   print "about_individual === $about_individual\n\n";
+  print "about_classroom === $about_classroom\n\n";
   print "about_list_districts === $about_list_districts\n\n";
   print "ordering_works === $ordering_works\n\n";
   exit;

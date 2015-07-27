@@ -15,7 +15,7 @@ sub start {
 
 
 
-# ----------------------------------------------------- Яндекс Метрика и Google Analytics -------------------------------------------------------------
+# ----------------------------------------------------- Яндекс Метрика и Google Analytics и Рамблер ТОП-100 -------------------------------------------------------------
 sub metrica_analytics_js {
   my ($refCONTEXT,$key) = @_;
 
@@ -59,6 +59,32 @@ sub metrica_analytics_js {
     ga('send', 'pageview');
 
   </script>
+
+  <div id='Rambler-counter' style='opacity:0'>
+  <!-- Внимание! В этом div'е не нельзя размещать пользовательский контент: он будет затерт! -->
+  <noscript>
+  <a href="http://top100.rambler.ru/navi/3123099/">
+    <img src="http://counter.rambler.ru/top100.cnt?3123099" alt="Rambler's Top100" border="0" />
+  </a>
+  </noscript>
+  </div>
+
+  <!-- Код скрипта должен быть размещен строго ниже контейнера для логотипа (div c id='Rambler-counter') -->
+  <script type="text/javascript">
+  var _top100q = _top100q || [];
+  _top100q.push(['setAccount', '3123099']);
+  _top100q.push(['trackPageviewByLogo', document.getElementById('Rambler-counter')]);
+
+  (function(){
+    var pa = document.createElement("script");
+    pa.type = "text/javascript";
+    pa.async = true;
+    pa.src = ("https:" == document.location.protocol ? "https:" : "http:") + "//st.top100.ru/top100/top100.js";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(pa, s);
+  })();
+  </script>
+
 
 EOF
 
