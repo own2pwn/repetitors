@@ -17,7 +17,7 @@ sub settings {
     return {
       domain =>     'http://127.0.0.1/',
       main_path => '/home_1/andrey7/www/mat-repetitor.ru/',
-      collapse => 0, # Свертка html 0 –– выключена, 1 –– включена
+      collapse => 1, # Свертка html 0 –– выключена, 1 –– включена
     }
   }
   elsif ($trigger == 1) {

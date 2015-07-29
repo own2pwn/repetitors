@@ -19,23 +19,33 @@ sub start {
 }
 
 
+# \u006d\u0061\u0072\u0069\u0061\u006E\u006E\u0061\u002E\u0072\u0065\u0070\u0065\u0074\u0069\u0074\u006F\u0072\u0040\u0067\u006d\u0061\u0069\u006C\u002E\u0063\u006F\u006d
 
+# mat.repetitors@yandex.ru
 
 # ----------------------------------------------------- ВСТАВКА телефона и email по ID -------------------------------------------------------------
 sub insert_contact_js {
   my ($refCONTEXT,$key) = @_;
-
+  my $mail = '';
+  if ($refCONTEXT -> {'teacher'} == 1) {
+    # marianna.repetitor@gmail.com
+    $mail = '\u006d\u0061\u0072\u0069\u0061\u006E\u006E\u0061\u002E\u0072\u0065\u0070\u0065\u0074\u0069\u0074\u006F\u0072\u0040\u0067\u006d\u0061\u0069\u006C\u002E\u0063\u006F\u006d';
+  }
+  else {
+    # mat.repetitors@yandex.ru
+    $mail = '\u006d\u0061\u0074\u002e\u0072\u0065\u0070\u0065\u0074\u0069\u0074\u006f\u0072\u0073\u0040\u0079\u0061\u006e\u0064\u0065\u0078\u002e\u0072\u0075';
+  }
   # JavaScript для КОНТАКТОВ возвращает по id utf8 и функция рисующая БОРДЕРЫ
-  my $js_insert_contact_js ='
+  my $js_insert_contact_js =<<"EOF";
 
   var mail = ["communication","communication_m","communication_m_footer"];
 
   for (var i=0,l=mail.length; i<l; i++) {
-     document.getElementById(mail[i]).innerHTML="\u006d\u0061\u0072\u0069\u0061\u006E\u006E\u0061\u002E\u0072\u0065\u0070\u0065\u0074\u0069\u0074\u006F\u0072\u0040\u0067\u006d\u0061\u0069\u006C\u002E\u0063\u006F\u006d";
+     document.getElementById(mail[i]).innerHTML = "$mail";
   }
 
   var phones = {
-    "\u0038\u0028\u0039\u0031\u0036\u0029\u002D\u0033\u0034\u0031\u002D\u0032\u0030\u0037\u0030":["communication_ph","communication_ph1","communication_ph2","communication_ph_footer","communication_ph_individual","communication_ph_contractual"],
+    "\\u0038\\u0028\\u0039\\u0031\\u0036\\u0029\\u002D\\u0033\\u0034\\u0031\\u002D\\u0032\\u0030\\u0037\\u0030":["communication_ph","communication_ph1","communication_ph2","communication_ph_footer","communication_ph_individual","communication_ph_contractual"],
     };
   for(var ph in phones) {
     var ids=phones[ph];
@@ -43,7 +53,7 @@ sub insert_contact_js {
      document.getElementById(ids[i]).innerHTML=ph;
      }
   }
-  ';
+EOF
 
   # communication это id для получения почты в header
 

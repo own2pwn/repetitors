@@ -75,8 +75,8 @@ sub correct_keys {
   my $domain = $refCONTEXT -> {domain};
 
   if ( $formed_url eq $cur_url ) {
-    if ($teacher_id <= 1) {
-      wf::add_to_file($path_log,"Редирект 301(id<=1) на main page $domain\n\n");
+    if ($teacher_id < 1) {
+      wf::add_to_file($path_log,"Редирект 301(id<1) на main page $domain\n\n");
       http::redirect(301,$domain);
     }
     elsif (!$refCONTEXT -> {'base_teachers'} -> {$teacher_id}) {

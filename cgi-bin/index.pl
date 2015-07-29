@@ -13,6 +13,7 @@ use base_links_to_teachers;
 use module__read_static_data;
 use module__header;
 use module__menu;
+use module__menu_top_teacher;
 use module__social_net;
 use module__form_order_call;
 use module__links_to_teachers;
@@ -57,7 +58,8 @@ sub App {
                       module__read_static_data::start(\%CONTEXT,$CONTEXT{'teacher'});
 
                       module__header::start(\%CONTEXT,'header');
-                      module__menu::start(\%CONTEXT,'teacher_menu');
+                      module__menu::start(\%CONTEXT,'main_menu');
+                      module__menu_top_teacher::start(\%CONTEXT,'teacher_menu');
                       module__social_net::start(\%CONTEXT,'social_net');
                       module__form_order_call::start(\%CONTEXT,'form_order_call');
                       module__links_to_teachers::start(\%CONTEXT,'links_to_teachers');

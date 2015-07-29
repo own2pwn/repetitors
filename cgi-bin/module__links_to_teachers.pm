@@ -91,7 +91,7 @@ EOF
 # Строим ссылки на страницы преподавателей
 sub build_path_to_teacher_page {
   my ($domain,$teacher_id) = @_;
-  return $domain.cgi_url::proccesing_url_keys({'action' => 'teacher', 'id' => $teacher_id});
+  return $domain.cgi_url::proccesing_url_keys({'action' => 'teacher', 'id' => $teacher_id},'&amp;');
 }
 
 1;

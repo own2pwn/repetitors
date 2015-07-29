@@ -1,3 +1,5 @@
 google8a1ebfa52e4602af.html
-*/*.doc
-*/*.docx
+*.doc
+*.docx
+/*.html
+/*.js

@@ -46,46 +46,6 @@ routing_order_call::start(\%CONTEXT);
 # test_start();
 
 
-# sub Routing {
-#   my $teacher_id = ($CONTEXT{'hash_cgi'} && $CONTEXT{'hash_cgi'} -> {'teacher'}) ? $CONTEXT{'hash_cgi'} -> {'teacher'} : '';
-#   my $region = ($CONTEXT{'hash_cgi'} && $CONTEXT{'hash_cgi'} -> {'region'}) ? $CONTEXT{'hash_cgi'} -> {'region'} : '';
-#   my $ph = ($CONTEXT{'hash_cgi'} && $CONTEXT{'hash_cgi'} -> {'ph'}) ? $CONTEXT{'hash_cgi'} -> {'ph'} : '';
-
-#   my $formed_url = $CONTEXT{'formed_url'};
-#   my $cur_url = '';
-
-#   # Главная страница
-#   if ($ENV{'QUERY_STRING'} eq '' && $ENV{'REQUEST_URI'} eq $ENV{SCRIPT_NAME}) {
-#     # $teacher_id = 1;
-#     $CONTEXT{'teacher'} = $teacher_id;
-#     $cur_url = '/';
-#     http::redirect(302,$c->{domain});
-#   }
-#   # Есть параметры в URL
-#   else {
-#     $cur_url = '?'.$ENV{'QUERY_STRING'};
-#     if ( $formed_url eq $cur_url ) {
-#       if ( $teacher_id < 1) {
-#         http::redirect(301,$c->{domain});
-#       }
-#       # TODO: Сделать forward на страницу данного преподавателя, а не на главную страницу
-#       elsif (!$CONTEXT{'base_teachers'} -> {$teacher_id} || $region eq '' || $ph eq '') {
-#         http::redirect(302,$c->{domain});
-#       }
-#       else {
-#         $CONTEXT{'teacher'} = $teacher_id;
-#         $CONTEXT{'region'} = $region;
-#         $CONTEXT{'ph'} = $ph;
-#         App();
-#       }
-#     }
-#     # Если есть лишние ключи
-#     else {
-#       http::redirect(302,$c->{domain}.$ENV{SCRIPT_NAME}.$formed_url);
-#     }
-#   }
-
-# }
 
 
 sub App {
@@ -240,7 +200,7 @@ sub Preparation_For_Sending_Email {
 # Строим путь к странице преподавателя: для кнокпки Вернуться на страницу преподавателя и refresh через 30 сек
 sub build_path_to_teacher_page {
   my $refCONTEXT = shift;
-  return $c -> {domain}.cgi_url::proccesing_url_keys({'action' => 'teacher', 'id' => $refCONTEXT->{'teacher'}});
+  return $c -> {domain}.cgi_url::proccesing_url_keys({'action' => 'teacher', 'id' => $refCONTEXT->{'teacher'}},'&amp;');
 }
 
 

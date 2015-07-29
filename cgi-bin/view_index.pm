@@ -77,6 +77,7 @@ EOF
   $data.= column_css::column('.main_table_column_third',  'width: 20%;', 'padding: 10px 1%;');
 
   $data.= $refCONTEXT->{'header'}->{css};
+  $data.= $refCONTEXT->{'main_menu'}->{css};
   $data.= $refCONTEXT->{'teacher_menu'}->{css};
   $data.= $refCONTEXT->{'form_order_call'}->{css};
   $data.= $refCONTEXT->{'links_to_teachers'}->{css};
@@ -140,6 +141,7 @@ $data .= <<"EOF";
   <div style="max-width:1000px;margin:0px auto;">
 
     $refCONTEXT->{'header'}->{'html'}
+    $refCONTEXT->{'main_menu'}->{'html'}
 
     <!-- Таблица , в который 3 ячейки: первая это меню, вторая  это тексты, а третья это колонка картинок -->
 
@@ -183,7 +185,6 @@ $data.= <<"EOF";
   <script>
     var D = document;
     var H = D.getElementsByTagName("head")[0];
-
     /*Функция рисующая бордеры для всех элементов рандомного цвета*/
      drawBorders(0);
        function drawBorders(trigger) {
@@ -191,12 +192,14 @@ $data.= <<"EOF";
              [].forEach.call(document.querySelectorAll("*"),function(a){a.style.outline="2px solid #"+(~~(Math.random()*(1<<24))).toString(16)})
          }
      }
-
+     function getByID (id) {
+       return document.getElementById(id);
+     }
     $refCONTEXT->{'insert_contact_js'}->{js}
     $refCONTEXT->{'form_order_call'}->{js}
     $refCONTEXT->{'header'}->{js}
+    $refCONTEXT->{'contacts_filials'}->{js}
   </script>
-
   $refCONTEXT->{'metrica_analytics_js'}->{js}
 
 

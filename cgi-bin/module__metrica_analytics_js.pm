@@ -64,7 +64,7 @@ sub metrica_analytics_js {
   <!-- Внимание! В этом div'е не нельзя размещать пользовательский контент: он будет затерт! -->
   <noscript>
   <a href="http://top100.rambler.ru/navi/3123099/">
-    <img src="http://counter.rambler.ru/top100.cnt?3123099" alt="Rambler's Top100" border="0" />
+    <img src="http://counter.rambler.ru/top100.cnt?3123099" alt="Rambler's Top100"/>
   </a>
   </noscript>
   </div>

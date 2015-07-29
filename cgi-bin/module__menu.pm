@@ -2,7 +2,7 @@ package module__menu;
 #!/usr/bin/perl
 use strict;
 
-# МЕНЮ
+# ОСНОВНОЕ МЕНЮ
 
 #########################
 sub start {
@@ -20,61 +20,66 @@ sub start {
 sub menu {
   my ($refCONTEXT,$key) = @_;
 
-  my %hash_teach = %{$refCONTEXT -> {'base_teachers'}};
-  my $teacher_id = $refCONTEXT -> {'teacher'};
 
-  my @teacher_menu = @{$hash_teach{$teacher_id} -> {'teacher_menu'}};
   my $html_menu =<<"EOF";
-    <span style='font-family:Comic Sans MS,Helvetica,cursive;font-size: 85%;'>Навигация:</span>
-    <ul id=menu>\n
+  <div class="main_table_column">
+    <div class=h_menu>
+      <ul>
+        <li><a href="#">Репетиторы</a></li>
+        <li><a href="#">Разместить резюме репетитора</a></li>
+      </ul>
+    </div>
+  </div>
 EOF
-  foreach my $el_menu (@teacher_menu) {
-    my $text_menu = $el_menu->[0];
-    my $link_menu = $el_menu->[1];
-    # print "Текст $text_menu\n";
-    # print "LINK $link_menu\n";
-    $html_menu.="<li><a href='$link_menu'>$text_menu</a></li>\n";
-  }
-  $html_menu.= "</ul>\n";
-  # print "$html_menu\n";
-  # exit;
 
   my $css_menu = '
-   #content { /*элемент с идентификатором content - наш блок*/
-     width: 100%; /*ширина содержательной части элемента*/
-     margin: 0 auto; /*внешние отступы 0, браузер сам определяет значение отступа*/
+  .main_table_column{
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0.5%;
+    vertical-align: top;
+    margin: 5px auto 35px auto;
   }
 
-  #menu { /*элемент с идентификатором menu - наш список*/
-     margin: 1em auto 0 auto; /*внешние отступы сверху, справа, снизу, слева*/
-  }
+  .h_menu {
+      margin: 0 auto;
+      width: 70%;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 10px;
+      background: #128F9A;
+      background-image: linear-gradient(to left bottom, #4EC9D4 0%, #128F9A 100%);
 
-  #menu li { /*элемент li элемента с идентификатором menu*/
-     list-style-type: none; /*задаем стиль отображения маркеров или нумерации для элементов списка - отобразить без маркера*/
-     margin: 0 0 5px; /*внешние отступы сверху, справа-слева, снизу*/
-     font-size: 15px; /*размер шрифта*/
-     background: #ccc; /*цвет фоновой заливки*/
-     padding: 10px 9%; /*внутренние отступы все*/
-     -webkit-box-shadow: inset 0px 0px 10px rgba(0,0,0, .3); /*расширения для браузеров эффект тени*/
-     -moz-box-shadow: inset 0px 0px 10px rgba(0,0,0, .3);
-     box-shadow: inset 0px 0px 10px rgba(0,0,0, .3); /*эффект тени элементу - внутренняя, параметры*/
-     -webkit-transition: .2s ease-in-out; /*расширения для браузеров, свойство, к изменению которого будет применен плавный переход, время, в течение которого этот переход будет совершаться, способ расчета промежуточных значений перехода и задержку перед переходом*/
-     -moz-transition: .2s ease-in-out;
-     -o-transition: .2s ease-in-out;
-  }
+      -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+         -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+              box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      -webkit-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+         -moz-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+              box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 
-
-  #menu a, #menu a:visited { /*ссылка, ссылка посещенная*/
-     color: #194d3b ; /*цвет #444*/
-     text-decoration: none; /*подчеркивание отсутствует*/
   }
-
-  #menu li:hover { /*элемент li элемента с идентификатором menu при наведении курсора*/
-     margin-left: -1em; /*внешние отступы слева*/
-     margin-right: 1em; /*внешние отступы справа*/
-     background: #fff; /*цвет фоновой заливки*/
-     box-shadow: 0px 0px 10px rgba(0,0,0, .3); /*эффект тени элементу - параметры*/
-  }
+    .h_menu ul{
+      padding:0;
+      margin:0;
+      border-radius: 6px;
+      border: 1px solid #0e7079;
+    }
+      .h_menu li{
+        display: inline;
+        list-style:none;
+        margin: 5px 10px;
+      }
+         .h_menu a{
+            padding:5px 10px;
+            color:#fff;
+            text-decoration: none;
+         }
+           .h_menu a:hover{
+              background: #138791;
+              color: #eee;
+              border-radius: 10px;
+              border: 1px solid #138791;
+           }
   ';
 
   my $js_menu ="
