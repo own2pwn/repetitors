@@ -59,6 +59,7 @@
    </p>
 
 @@@@
+
    <p>
      В следующих районах Москвы и Подмосковья
      цены на занятия по английскому языку
@@ -67,6 +68,7 @@
        <b style='color:black;'><span id=communication_ph_contractual></span></b>):
      </span>
    </p>
+
 @@@@
 
    <h2 id=order_solution> Решение тестов по английскому языку </h2>

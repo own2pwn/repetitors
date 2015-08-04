@@ -12,7 +12,7 @@ use base_links_to_teachers;
 
 use module__read_static_data;
 use module__header;
-use module__menu;
+use module__h_menu;
 use module__menu_top_teacher;
 use module__social_net;
 use module__form_order_call;
@@ -31,12 +31,13 @@ use view_index;
 
 use lib './my/';
 use cgi_url;
+use build_path;
 use http;
 use collapse;
 use wf;
 use write_env;
 
-my %CONTEXT = ('min' => 0, collapse => $c->{collapse}, domain => $c -> {domain});
+my %CONTEXT = ('min' => 0, collapse => $c->{collapse}, domain => $c -> {domain}, api_js => $c -> {api_js});
 base_teachers::start(\%CONTEXT,'base_teachers');
 base_links_to_teachers::start(\%CONTEXT,'base_links_to_teachers');
 
@@ -58,7 +59,7 @@ sub App {
                       module__read_static_data::start(\%CONTEXT,$CONTEXT{'teacher'});
 
                       module__header::start(\%CONTEXT,'header');
-                      module__menu::start(\%CONTEXT,'main_menu');
+                      module__h_menu::start(\%CONTEXT,'main_menu');
                       module__menu_top_teacher::start(\%CONTEXT,'teacher_menu');
                       module__social_net::start(\%CONTEXT,'social_net');
                       module__form_order_call::start(\%CONTEXT,'form_order_call');

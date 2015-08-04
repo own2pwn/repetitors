@@ -17,7 +17,8 @@ sub settings {
     return {
       domain =>     'http://127.0.0.1/',
       main_path => '/home_1/andrey7/www/mat-repetitor.ru/',
-      collapse => 1, # Свертка html 0 –– выключена, 1 –– включена
+      collapse => 0, # Свертка html              0 –– выключена, 1 –– включена
+      api_js => 1,   # metrica,analytics и т.д.  0 –– выключена, 1 –– включена
     }
   }
   elsif ($trigger == 1) {
@@ -25,6 +26,7 @@ sub settings {
         domain =>    'http://mat-repetitor.ru/',
         main_path =>'/home/andrey7/www/mat-repetitor.ru/',
         collapse => 1,
+        api_js => 0,
     }
   }
   elsif ($trigger == 2) {
@@ -32,6 +34,7 @@ sub settings {
         domain =>    'http://mat-repetitor.ru.ngrok.com/',
         main_path =>'/home/andrey7/www/mat-repetitor.ru/',
         collapse => 1,
+        api_js => 0,
     }
   }
 }

@@ -32,7 +32,7 @@ sub base_css {
   table tr{vertical-align:top}
   table td{padding:0}
   a{color:#1a50bd;text-decoration:none}
-    a:visited{color:#551A8B}
+    /*a:visited{color:#551A8B}*/
     a:active, a:focus, img{outline:0}
 
   h1{display:inline;font-weight:normal;font-size:110%} /*color:#AB3C3C;*/

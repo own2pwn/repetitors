@@ -16,14 +16,8 @@ sub start {
   # print $CONTEXT{$key};
 }
 
-  # \@font-face {
-  #   font-family: 'Tangerine';
-  #   font-style: normal;
-  #   font-weight: 400;
-  #   src: local('Tangerine'), url(fonts/tangerine.woff) format('woff');
-  # }
 
-#
+
 # ----------------------------------------------------- VIEW ПЕРВОЙ СТРАНИЦЫ И СТРАНИЦ ПРЕПОДАВАТЕЛЕЙ -------------------------------------------------------------
 sub view_index {
   my ($refCONTEXT,$key) = @_;
@@ -76,14 +70,14 @@ EOF
   $data.= column_css::column('.main_table_column_second', 'width: 53%;', 'padding: 10px 1%;');
   $data.= column_css::column('.main_table_column_third',  'width: 20%;', 'padding: 10px 1%;');
 
-  $data.= $refCONTEXT->{'header'}->{css};
-  $data.= $refCONTEXT->{'main_menu'}->{css};
-  $data.= $refCONTEXT->{'teacher_menu'}->{css};
-  $data.= $refCONTEXT->{'form_order_call'}->{css};
-  $data.= $refCONTEXT->{'links_to_teachers'}->{css};
-  $data.= $refCONTEXT->{'branch_price'}->{css};
-  $data.= $refCONTEXT->{'list_districts'}->{css};
-  $data.= $refCONTEXT->{'footer'}->{css};
+  $data.= $refCONTEXT->{'header'}->{css} || '';
+  $data.= $refCONTEXT->{'main_menu'}->{css} || '';
+  $data.= $refCONTEXT->{'teacher_menu'}->{css} || '';
+  $data.= $refCONTEXT->{'form_order_call'}->{css} || '';
+  $data.= $refCONTEXT->{'links_to_teachers'}->{css} || '';
+  $data.= $refCONTEXT->{'branch_price'}->{css} || '';
+  $data.= $refCONTEXT->{'list_districts'}->{css} || '';
+  $data.= $refCONTEXT->{'footer'}->{css} || '';
 
 
 $data .= <<"EOF";
@@ -198,14 +192,15 @@ $data.= <<"EOF";
     $refCONTEXT->{'insert_contact_js'}->{js}
     $refCONTEXT->{'form_order_call'}->{js}
     $refCONTEXT->{'header'}->{js}
+    $refCONTEXT->{'main_menu'}->{js}
     $refCONTEXT->{'contacts_filials'}->{js}
   </script>
-  $refCONTEXT->{'metrica_analytics_js'}->{js}
-
-
-  </body>
 EOF
+  $data .= ($refCONTEXT->{api_js} == 1) ? $refCONTEXT->{'metrica_analytics_js'}->{js} : '';
 
+  $data .= '</body>';
+
+# $refCONTEXT->{'metrica_analytics_js'}->{js}
 
   $refCONTEXT -> {$key} = $data;
 
