@@ -274,7 +274,7 @@ EOF
           itemId['item_' + numId] = 'on';
         }
         else {
-          (itemId['item_' + numId] === 'on') ? {} : Show(numId);
+          (itemId['item_' + numId] === 'on') ? Hide(numId) : Show(numId);
         }
       }
       else if (textAfterId === 'hide') {

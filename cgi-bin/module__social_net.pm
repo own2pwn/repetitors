@@ -33,15 +33,15 @@ sub social_net {
    <p>
        Мы в социальных сетях:<br>
        <a href='https://vk.com/club78990716'>
-       <img style='width:38px;border-radius:3px;margin:16px 3%' alt='' src='Photo/Vkontakte.png'>
+       <img style='width:38px;border-radius:3px;margin:16px 3%' alt='' src='$refCONTEXT->{domain}/Photo/Vkontakte.png'>
        </a>
 
        <a href='https://www.facebook.com/groups/373448889477325/'>
-       <img style='width:38px;border-radius:3px;margin:16px 3%;pading:0 1%' alt='' src='Photo/Facebook.png'>
+       <img style='width:38px;border-radius:3px;margin:16px 3%;pading:0 1%' alt='' src='$refCONTEXT->{domain}/Photo/Facebook.png'>
        </a>
 
        <a href='https://twitter.com/MariannaKamaeva'>
-       <img style='width:38px;border-radius:3px;margin:16px 3%' alt='' src='Photo/Twitter.png'>
+       <img style='width:38px;border-radius:3px;margin:16px 3%' alt='' src='$refCONTEXT->{domain}/Photo/Twitter.png'>
        </a>
    </p>
 

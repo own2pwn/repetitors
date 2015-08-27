@@ -47,7 +47,7 @@ sub footer {
 
   ## Таблица , в который 2 ячейки: левая это красивый заголовок, а правая это контакты
   my $html_footer ='
-  <div class=footer>
+<div class=footer>
 
   <div class=four_column>
     <a href="#teacher">        Преподаватель
@@ -69,7 +69,7 @@ sub footer {
   <div class="commnication_style two_column_contact_footer"> <span id="communication_m_footer"></span>  </div>
   <div class="commnication_style two_column_contact_footer">  <span id="communication_ph_footer"></span> </div>
 
-   <p style="font-size:80%;text-align:center"> © Copyright 2015 </p>
+   <p style="font-size:80%;text-align:center"> © Copyright 2014 &mdash; 2015 </p>
 
 </div>
   ';

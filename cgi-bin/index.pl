@@ -21,6 +21,7 @@ use module__table_price;
 use module__list_districts;
 use module__contacts_filials;
 use module__main_column_third;
+use module__comments_vk;
 use module__footer;
 
 use module__insert_contact_js;
@@ -69,6 +70,7 @@ sub App {
                       module__table_price::start(\%CONTEXT,'individual_price');
                       module__list_districts::start(\%CONTEXT,'list_districts');
                       module__contacts_filials::start(\%CONTEXT,'contacts_filials');
+                      module__comments_vk::start(\%CONTEXT,'vk_comments');
                       module__main_column_third::start(\%CONTEXT,'column_page');
 
                       module__footer::start(\%CONTEXT,'footer');

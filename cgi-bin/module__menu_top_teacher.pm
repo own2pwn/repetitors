@@ -31,8 +31,6 @@ EOF
   foreach my $el_menu (@teacher_menu) {
     my $text_menu = $el_menu->[0];
     my $link_menu = $el_menu->[1];
-    # print "Текст $text_menu\n";
-    # print "LINK $link_menu\n";
     $html_menu.="<li><a href='$link_menu'>$text_menu</a></li>\n";
   }
   $html_menu.= "</ul>\n";

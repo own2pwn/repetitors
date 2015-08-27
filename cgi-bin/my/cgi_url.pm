@@ -34,8 +34,9 @@ sub CGI_hash {
 sub proccesing_url_keys{
   my ($ref_hash_cgi, $amp) = @_;
   $amp = ($amp) ? $amp : '&';
-  my %page_type = ( 'teacher'    => ['id'],
-                    'order_call' => ['id','region','ph']
+  my %page_type = ( 'teacher'      => ['id'],
+                    'order_call'   => ['id','region','ph'],
+                    'all_teachers' => ['sub']
                    );
   my $url = '?';
   my $count = 0; # Счетчик, прибавления, хотя бы одного параметра к url
@@ -56,10 +57,11 @@ sub proccesing_url_keys{
     $url =~s/$amp$//ig;
   }
   else {
-    # print "Не существует параметров для url!\n";
+    # print STDERR "Не существует параметров для url!\n";
     return '';
   }
   if ($count == 0) { return '';}
+  # print STDERR "Here url === $url\n";
   return $url;
 
 }

@@ -41,17 +41,23 @@ sub insert_contact_js {
   var mail = ["communication","communication_m","communication_m_footer"];
 
   for (var i=0,l=mail.length; i<l; i++) {
-     document.getElementById(mail[i]).innerHTML = "$mail";
+    var elMail = getByID(mail[i]);
+    if (elMail !== null && elMail !== undefined ) {
+      elMail.innerHTML = "$mail";
+    }
   }
 
   var phones = {
     "\\u0038\\u0028\\u0039\\u0031\\u0036\\u0029\\u002D\\u0033\\u0034\\u0031\\u002D\\u0032\\u0030\\u0037\\u0030":["communication_ph","communication_ph1","communication_ph2","communication_ph_footer","communication_ph_individual","communication_ph_contractual"],
-    };
+  };
   for(var ph in phones) {
-    var ids=phones[ph];
-    for (var i=0,l=ids.length; i<l; i++) {
-     document.getElementById(ids[i]).innerHTML=ph;
-     }
+    var ids = phones[ph];
+    for (var i = 0,l = ids.length; i < l; i++) {
+      var elPh = getByID(ids[i]);
+      if (elPh !== null && elPh !== undefined) {
+        elPh.innerHTML = ph;
+      }
+    }
   }
 EOF
 

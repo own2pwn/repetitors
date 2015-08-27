@@ -1,250 +1,58 @@
-Введенный: ?action=teacher&id=2
-Собранный: ?action=teacher&id=2
-Запуск приложения
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Введенный: ?action=teacher&id=3
-Собранный: ?action=teacher&id=3
-Запуск приложения
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Введенный: ?
-Собранный: 
-Редирект(не совпали ключи) на собранный url http://127.0.0.1/ 
-
-Введенный: ?
-Собранный: 
-Редирект(не совпали ключи) на собранный url http://127.0.0.1/ 
-
-Введенный: ?
-Собранный: 
-Редирект(не совпали ключи) на собранный url http://127.0.0.1/ 
-
-Запуск приложения (это главная страница)
-
-Введенный: ?
-Собранный: 
-Редирект(не совпали ключи) на собранный url http://127.0.0.1/ 
-
-Запуск приложения (это главная страница)
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=3
-Собранный: ?action=teacher&id=3
-Запуск приложения
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=2
-Собранный: ?action=teacher&id=2
-Запуск приложения
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=2
-Собранный: ?action=teacher&id=2
-Запуск приложения
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=3
-Собранный: ?action=teacher&id=3
-Запуск приложения
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=3
-Собранный: ?action=teacher&id=3
-Запуск приложения
+Введенный: ?action=all_teachers&sub=russian_language
+Собранный: ?action=all_teachers&sub=russian_language
+Запуск приложения all_teachers.pl
 
-Запуск приложения (это главная страница)
+Введенный: ?action=all_teachers&sub=english_language
+Собранный: ?action=all_teachers&sub=english_language
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=2
-Собранный: ?action=teacher&id=2
-Запуск приложения
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=3
-Собранный: ?action=teacher&id=3
-Запуск приложения
+Введенный: ?action=all_teachers&sub=mathematics
+Собранный: ?action=all_teachers&sub=mathematics
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=2
-Собранный: ?action=teacher&id=2
-Запуск приложения
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Запуск приложения (это главная страница)
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Введенный: ?
-Собранный: 
-Редирект(не совпали ключи) на собранный url http://127.0.0.1/ 
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Запуск приложения (это главная страница)
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
 Запуск приложения (это главная страница)
 
@@ -263,196 +71,112 @@
 Запуск приложения (это главная страница)
 
 Запуск приложения (это главная страница)
-
-Введенный: ?
-Собранный: 
-Редирект(не совпали ключи) на собранный url http://127.0.0.1/ 
 
-Введенный: ?action=teacher
-Собранный: 
-Редирект(не совпали ключи) на собранный url http://127.0.0.1/ 
-
 Запуск приложения (это главная страница)
-
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=mathematics
+Собранный: ?action=all_teachers&sub=mathematics
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=russian_language
+Собранный: ?action=all_teachers&sub=russian_language
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=russian_language
+Собранный: ?action=all_teachers&sub=russian_language
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=russian_language
+Собранный: ?action=all_teachers&sub=russian_language
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
-
-Запуск приложения (это главная страница)
-
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
-
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
-
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
-
-Запуск приложения (это главная страница)
+Введенный: ?action=all_teachers&sub=english_language
+Собранный: ?action=all_teachers&sub=english_language
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=english_language
+Собранный: ?action=all_teachers&sub=english_language
+Запуск приложения all_teachers.pl
 
 Запуск приложения (это главная страница)
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=english_language
+Собранный: ?action=all_teachers&sub=english_language
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=mathematics
+Собранный: ?action=all_teachers&sub=mathematics
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=russian_language
+Собранный: ?action=all_teachers&sub=russian_language
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=english_language
+Собранный: ?action=all_teachers&sub=english_language
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=mathematics
+Собранный: ?action=all_teachers&sub=mathematics
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=mathematics
+Собранный: ?action=all_teachers&sub=mathematics
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=mathematics
+Собранный: ?action=all_teachers&sub=mathematics
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=mathematics
+Собранный: ?action=all_teachers&sub=mathematics
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=russian_language
+Собранный: ?action=all_teachers&sub=russian_language
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=all
+Собранный: ?action=all_teachers&sub=all
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=mathematics
+Собранный: ?action=all_teachers&sub=mathematics
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
-
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
-
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
-
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
-
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
-
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
-
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
-
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
-
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
-
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
-
-Запуск приложения (это главная страница)
+Введенный: ?action=all_teachers&sub=mathematics
+Собранный: ?action=all_teachers&sub=mathematics
+Запуск приложения all_teachers.pl
 
-Введенный: ?action=teacher&id=4
-Собранный: ?action=teacher&id=4
-Запуск приложения
+Введенный: ?action=all_teachers&sub=mathematics
+Собранный: ?action=all_teachers&sub=mathematics
+Запуск приложения all_teachers.pl
 

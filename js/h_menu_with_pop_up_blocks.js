@@ -1,4 +1,8 @@
 
+
+// Всплывающие подсказки для пункта меню
+
+
 /*jshint sub: true*/
 /*jshint loopfunc: true */
 /*jshint newcap: false */
@@ -35,6 +39,16 @@
 
 // </div>
 
+/* Для добавления нового пунтка:
+*   добавляем в html следующий код
+* <li>
+*   <a id=h_menu_item_номер_show href="#" class="h_menu_links">Разместить резюме репетитора</a>
+* </li>
+* а также новый счетчик в хэш itemId 'item_номер_PopUp' : false
+*/
+
+
+
 // Хэш в котором будем хранить состояние
 // активирована подсказка или нет, по ключу вида: item_1+
 // и счетчик вставки в виде 'item_1_PopUp'
@@ -43,8 +57,9 @@
   var list_links_teachers = [
     ['Репетитор по английскому языку (Текстильщики, Кузьминки, Рязанский проспект, Выхино, Жулебино)','#'],
     ['Репетитор по русскому языку и литературе (Ясенево, Коньково, Теплый Стан, Беляево, Профсоюзная)','#']
-    ];
-  var itemId = {'item_1_PopUp' : false, 'item_2_PopUp' : false };
+    ],
+itemId = {'item_1_PopUp' : false, 'item_2_PopUp' : false, 'item_3_PopUp' : false };
+// Не ЗАБЫВАЙ, что при появлении нового элемента надо добавить в хэш новый счетчик состояния
 
   getByID('h_menu').onclick = function(e) {
     var t = e && e.target || e.srcElement,m;
@@ -66,7 +81,9 @@
       countPopUp = itemId[k];
       // если  первый раз кликнули на блок
       if (countPopUp === false) {
-        Insert_Html(assembly_links_teachers(),numId);
+        // определяем какой текст вставлять во всплывающий блок
+        Insert_block_pop_up_and_info(numId);
+
         itemId[k] = true;
         itemId['item_' + numId] = 'on';
       }
@@ -104,12 +121,22 @@
     itemId['item_' + numId] = 'off';
   }
 
-
+// функция, которая взависимости от номер в id выбирает
+// содержимое всплывающего блока
+function Insert_block_pop_up_and_info (numId) {
+  if (numId === 1) {
+    Insert_Block(assembly_links_teachers(),numId)
+  }
+  else {
+    Insert_Block(assembly_warnings(),numId);
+  }
+}
   /**
-   * @param [string]strIn ссылки на преподавателей
+   * Сборка блока всплывающего блока вместе с информацией
+   * @param [string]strIn информация, которая будет внутри блока
    * @param [digit] numId номер вставляемого элемента
    */
-  function Insert_Html(strIn, numId){
+  function Insert_Block(strIn, numId){
     var html =
     "<div id='h_menu_item_" + numId + "_triangle' class=triangle></div>\
      <div id='h_menu_item_" + numId + "_pop_up'  class='pop_up h_menu_links_teachers'>\
@@ -128,6 +155,13 @@
       strIn += '<p style="margin-top:0"><a href="' + link + '">' + text + '</a></p>';
     }
     return strIn;
+  }
+
+  // сборка текста о том,что кнопка не работает
+  function assembly_warnings() {
+    return "<p style='margin-top:0'>\
+             <span style='color:black'>Извините, данная возможность в ближайшее время будет доступна!</span>\
+            </p>";
   }
 
       function getByID (id) {

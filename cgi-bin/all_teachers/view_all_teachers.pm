@@ -1,10 +1,10 @@
-package view_index;
+package view_all_teachers;
 #!/usr/bin/perl
 use strict;
 
 # ШАБЛОН ОТОБРАЖЕНИЯ ПЕРВОЙ СТРАНИЦЫ И СТРАНИЦ ПРЕПОДАВАТЕЛЕЙ
 
-use lib './css';
+use lib '../css';
 use base_css;
 use column_css;
 
@@ -22,19 +22,17 @@ sub start {
 sub view_index {
   my ($refCONTEXT,$key) = @_;
 
-my $teacher_id = $refCONTEXT -> {'teacher'};
-my $yandex_verifycation = '';
-if ($teacher_id == 1) {$yandex_verifycation = "<meta name='yandex-verification' content='5f315588ebc8a9c3' />";}
+
 
   my $data = <<"EOF";
   <!DOCTYPE html>
   <html><head>
   <meta charset=utf-8>
-  $refCONTEXT->{'title'}->{html}
-
-  $yandex_verifycation
-  $refCONTEXT->{'description'}->{html}
-  $refCONTEXT->{'keywords'}->{html}
+EOF
+  $data.= $refCONTEXT->{'title'}->{html}       || '';
+  $data.= $refCONTEXT->{'description'}->{html} || '';
+  $data.= $refCONTEXT->{'keywords'}->{html}    || '';
+$data.= <<"EOF";
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
@@ -46,7 +44,7 @@ if ($teacher_id == 1) {$yandex_verifycation = "<meta name='yandex-verification' 
   .commnication_style {font-family: "Comic Sans MS",cursive;font-size: 1em;color: #5E1C1C;}
   /*Классы для заголовка "Вас приглашет Марианна Камаева и т.д." */
   .headline {font-weight:normal;font-size:120%;text-align:center;color:#5E1C1C;display:block}
-
+  h1{font-size:120%;text-align:center;color:#5E1C1C;}
   .leftimg {
     width:170px;
     float:left; /* Выравнивание по левому краю */
@@ -70,15 +68,13 @@ EOF
   $data.= column_css::column('.main_table_column_second', 'width: 53%;', 'padding: 10px 1%;');
   $data.= column_css::column('.main_table_column_third',  'width: 20%;', 'padding: 10px 1%;');
 
-  $data.= $refCONTEXT->{'header'}->{css} || '';
-  $data.= $refCONTEXT->{'main_menu'}->{css} || '';
-  $data.= $refCONTEXT->{'teacher_menu'}->{css} || '';
-  $data.= $refCONTEXT->{'form_order_call'}->{css} || '';
-  $data.= $refCONTEXT->{'links_to_teachers'}->{css} || '';
-  $data.= $refCONTEXT->{'branch_price'}->{css} || '';
-  $data.= $refCONTEXT->{'list_districts'}->{css} || '';
-  $data.= $refCONTEXT->{'vk_comments'}->{css} || '';
-  $data.= $refCONTEXT->{'footer'}->{css} || '';
+  $data.= $refCONTEXT->{header}->{css} || '';
+  $data.= $refCONTEXT->{main_menu}->{css} || '';
+  $data.= $refCONTEXT->{menu_teachers_by_subjects}->{css} || '';
+  $data.= $refCONTEXT->{form_order_call}->{css} || '';
+  $data.= $refCONTEXT->{collect_teachers}->{css} || '';
+  $data.= $refCONTEXT->{links_to_teachers}->{css} || '';
+  $data.= $refCONTEXT->{footer}->{css} || '';
 
 
 $data .= <<"EOF";
@@ -125,6 +121,7 @@ $data .= <<"EOF";
     }
 
 
+
   </style>
   </head>
 EOF
@@ -137,39 +134,21 @@ $data .= <<"EOF";
     $refCONTEXT->{'header'}->{'html'}
     $refCONTEXT->{'main_menu'}->{'html'}
 
-    <!-- Таблица , в который 3 ячейки: первая это меню, вторая  это тексты, а третья это колонка картинок -->
-
-    <div class="main_table_column_first">
+   <!-- Таблица , в который 3 ячейки: первая это меню, вторая  это преподаватели по конкрентному предмету, а третья это колонка картинок -->
 EOF
-       $data.= $refCONTEXT->{'teacher_menu'}->{html};
-       if ($teacher_id == 1) {
-         $data.= $refCONTEXT->{'form_order_call'}->{html};
-         $data.= $refCONTEXT->{links_to_teachers}->{html};
-       }
-       else {
-        $data.= $refCONTEXT->{links_to_teachers}->{html};
-        $data.= $refCONTEXT->{'form_order_call'}->{html};
-       }
-       $data.= $refCONTEXT->{'social_net'}->{html}
-    .'</div>';
+
+  $data.= '<div class=main_table_column_first>';
+    $data.= $refCONTEXT->{links_to_teachers}->{html} || '';
+    $data.= $refCONTEXT->{menu_teachers_by_subjects}->{html} || '';
+    $data.= $refCONTEXT->{social_net}->{html} || '';
+  $data.= '</div>';
+
+
+$data.= '<div class="main_table_column_second" style="text-align:center">';
+  $data.= $refCONTEXT->{collect_teachers}->{html} || '';
+$data.= '</div>';
+
 $data.= <<"EOF";
-    <div class="main_table_column_second">
-      $refCONTEXT->{'about_teacher'}->{html}
-
-      $refCONTEXT->{'about_individual'}->{html}
-      $refCONTEXT->{'individual_price'}->{html}
-      $refCONTEXT->{'about_classroom'}->{html}
-      $refCONTEXT->{'branch_price'}->{html}
-      $refCONTEXT->{'about_list_districts'}->{html}
-      $refCONTEXT->{'list_districts'}->{html}
-
-      $refCONTEXT->{'ordering_works'}->{html}
-
-      $refCONTEXT->{'contacts_filials'}->{html}
-      $refCONTEXT->{'vk_comments'}->{html}
-
-    </div>
-
     <div class="main_table_column_third">
       $refCONTEXT->{'column_page'}->{'html'}
     </div>
@@ -177,7 +156,6 @@ $data.= <<"EOF";
   </div>
 
   $refCONTEXT->{'footer'}->{'html'}
-
   <script>
     var D = document;
     var H = D.getElementsByTagName("head")[0];
@@ -192,19 +170,13 @@ $data.= <<"EOF";
        return document.getElementById(id);
      }
     $refCONTEXT->{'insert_contact_js'}->{js}
-    $refCONTEXT->{'form_order_call'}->{js}
     $refCONTEXT->{'header'}->{js}
     $refCONTEXT->{'main_menu'}->{js}
-    $refCONTEXT->{'contacts_filials'}->{js}
   </script>
-
 EOF
-  $data .= ($refCONTEXT->{api_js} == 1) ? $refCONTEXT->{'vk_comments'}->{js} : '';
   $data .= ($refCONTEXT->{api_js} == 1) ? $refCONTEXT->{'metrica_analytics_js'}->{js} : '';
 
   $data .= '</body>';
-
-# $refCONTEXT->{'metrica_analytics_js'}->{js}
 
   $refCONTEXT -> {$key} = $data;
 
