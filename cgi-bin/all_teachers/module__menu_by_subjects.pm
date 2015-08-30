@@ -56,7 +56,7 @@ sub menu_by_subjects_teachers {
     if ($subj ne $subject) {
       my $subject_text = $one_subject -> {text};
       my $subject_link = build_path::teachers_subjects(
-                          $domain.'/cgi-bin/all_teachers/all_teachers.pl/',
+                          $domain,
                           $subj).'#teachers_by_subject';
       $html_by_subjects_teachers.= "<li><a href='$subject_link'>$subject_text</a></li>";
       push(@menu_by_subject, [$subject_text,$subject_link]);

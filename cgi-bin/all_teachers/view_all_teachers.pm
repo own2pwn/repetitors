@@ -1,6 +1,7 @@
 package view_all_teachers;
 #!/usr/bin/perl
 use strict;
+use Data::Dumper;
 
 # ШАБЛОН ОТОБРАЖЕНИЯ ПЕРВОЙ СТРАНИЦЫ И СТРАНИЦ ПРЕПОДАВАТЕЛЕЙ
 
@@ -22,16 +23,18 @@ sub start {
 sub view_index {
   my ($refCONTEXT,$key) = @_;
 
-
+  my $subject = $refCONTEXT -> {'subject'};
 
   my $data = <<"EOF";
   <!DOCTYPE html>
   <html><head>
   <meta charset=utf-8>
 EOF
-  $data.= $refCONTEXT->{'title'}->{html}       || '';
-  $data.= $refCONTEXT->{'description'}->{html} || '';
-  $data.= $refCONTEXT->{'keywords'}->{html}    || '';
+
+  $data.= $refCONTEXT->{base_subjects}->{$subject}->{title} || '';
+  $data.= $refCONTEXT->{base_subjects}->{$subject}->{description} || '';
+  $data.= $refCONTEXT->{base_subjects}->{$subject}->{keywords} || '';
+
 $data.= <<"EOF";
   <meta name="viewport" content="width=device-width, initial-scale=1">
 

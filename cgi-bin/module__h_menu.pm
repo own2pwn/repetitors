@@ -135,6 +135,16 @@ sub menu {
   </div>
 EOF
 
+# СТАРЫЙ КОД ДЛЯ КРЕСТИКА
+# .cross{
+#   font-size: 200%;
+#   line-height: .5;
+#   width: 2%;
+#   margin: 2px 2% 2px 97%;
+#   cursor: pointer;
+#   color: #666;
+#   /*border: 2px solid brown;*/
+# }
 
   my $css_menu = column_css::column_with_param('.main_table_column_h_menu',
                                                 'width: 96%;',
@@ -214,12 +224,15 @@ EOF
 
   /*Крестик и тексты внутри всплывающего блока*/
   .cross{
+    float:right;
+    width:4%;
+    text-align:center;
+    margin-right:-5px;
+    margin-top:-5px;
+    line-height:1;
+    color:#666;
+    cursor:pointer;
     font-size: 200%;
-    line-height: .5;
-    width: 2%;
-    margin: 2px 2% 2px 97%;
-    cursor: pointer;
-    color: #666;
     /*border: 2px solid brown;*/
   }
 
@@ -228,7 +241,7 @@ EOF
     margin: 10px auto;
     text-align: justify;
     line-height: 2;
-    /*border: 2px solid brown*/
+    /*border: 2px solid black*/
   }
 
   .h_menu_links_teachers a{
@@ -240,6 +253,9 @@ EOF
   }
   .h_menu_links_teachers a:hover{color:#CC3366;}
   ';
+
+  my $all_teachers_link =
+  build_path::teachers_subjects($refCONTEXT->{domain},'all').'#teachers_by_subject';
 
   # Perl вставляет массив ссылок на преподавателей
   my $js_menu =<<"EOF";
@@ -305,7 +321,11 @@ EOF
 
 
     function Insert_Html(strIn, numId){
-      var html ="<div id='h_menu_item_" + numId + "_triangle' class=triangle></div><div id='h_menu_item_" + numId + "_pop_up'  class='pop_up h_menu_links_teachers'><div id='h_menu_item_" + numId + "_hide' class=cross>&times;</div>"+strIn+"</div>";
+      var html ="<div id='h_menu_item_" + numId + "_triangle' class=triangle></div>\\
+      <div id='h_menu_item_" + numId + "_pop_up'  class='pop_up h_menu_links_teachers'>\\
+        <div id='h_menu_item_" + numId + "_hide' class=cross>&times;</div>" +
+        strIn +
+      "</div>";
       getByID('h_menu_item_' + numId + '_show').insertAdjacentHTML('beforeEnd', html);
     }
 
@@ -314,13 +334,14 @@ EOF
       for (var i = 0, l = list_links_teachers.length; i < l; i++) {
         var text = list_links_teachers[i][0];
         var link = list_links_teachers[i][1];
-        strIn += '<p style="margin-top:0"><a href="' + link + '">' + text + '</a></p>';
+        strIn += '<p><a href="' + link + '">' + text + '</a></p>';
       }
+      strIn += '<a style="color:#CC3366;white-space:nowrap;" href="$all_teachers_link">Все репетиторы &#8594;</a>';
       return strIn;
     }
 
     function assembly_warnings() {
-      return "<p style='margin-top:0'>\\
+      return "<p>\\
                <span style='color:black;font-style:italic'>Извините, данная возможность в ближайшее время будет доступна!</span>\\
               </p>";
     }

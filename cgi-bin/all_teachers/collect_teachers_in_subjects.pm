@@ -2,7 +2,7 @@ package collect_teachers_in_subjects;
 #!/usr/bin/perl
 use 5.010;
 use strict;
-# use Data::Dumper;
+use Data::Dumper;
 
 # use lib './';
 # use base_links_to_teachers;
@@ -34,10 +34,9 @@ sub collect_teachers_in_subjects {
   my ($refCONTEXT,$key) = @_;
 
   my $subject = $refCONTEXT -> {'subject'};
-  say STDERR "subject === $subject\n";
   my $h1 = $refCONTEXT->{base_subjects}->{$subject}->{text} || '';
   my $html_teachers_in_subjects = '<h1 id=teachers_by_subject>'.$h1.'</h1>';
-  $html_teachers_in_subjects = '<div>';
+  $html_teachers_in_subjects .= '<div>';
 
   # { id => {
   #         'title' => 'Репетитор по математике (Люберцы, Балашиха, Железнодорожный, Волжская, Марьино)',

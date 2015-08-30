@@ -19,7 +19,9 @@ sub build_path_to_teacher_page {
 # ---------------------------------------- Формируем URL для ссылок на преподавателей по определенным предметам  -------------------------------------------------------------
 sub teachers_subjects {
   my ($domain,$subject) = @_;
-  return $domain.cgi_url::proccesing_url_keys({'action' => 'all_teachers', 'sub' => $subject},'&amp;');
+  my $path = $domain.'/cgi-bin/all_teachers/all_teachers.pl/';
+  return $path.cgi_url::proccesing_url_keys({'action' => 'all_teachers', 'sub' => $subject},'&amp;');
+  # return $domain.cgi_url::proccesing_url_keys({'action' => 'all_teachers', 'sub' => $subject},'&amp;');
 }
 
 1;

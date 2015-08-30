@@ -44,6 +44,7 @@ use wf;
 use write_env;
 
 
+
 $CONTEXT{'hash_cgi'} = cgi_url::CGI_hash();
 # Построили url из {cgi_key} = cgi_value и сохранили url по ключу formed_url
 $CONTEXT{'formed_url'} = cgi_url::proccesing_url_keys($CONTEXT{'hash_cgi'});

@@ -51,13 +51,15 @@ sub links_to_teachers {
         </p>";
     }
   }
-  my $all_teachers = build_path::teachers_subjects(
-                          $domain.'/cgi-bin/all_teachers/all_teachers.pl/',
-                          'all');
+  my $all_teachers_link = build_path::teachers_subjects($domain,'all').'#teachers_by_subject';
   # $html_links_to_teachers .= "
   #   <div style='border:1px solid #eee'>
   #     <a style='color:#CC3366;white-space:nowrap;text-decoration:none;' href='$all_teachers'>Все преподаватели &#8594;</a>
   #   </div>";
+  $html_links_to_teachers .= "
+    <div style='font-size:90%;margin-top:30px;border:2px solid #CC3366;border-radius:12px;padding:5px 3%'>
+      <a style='color:#CC3366;white-space:nowrap;text-decoration:none;' href='$all_teachers_link'>Все преподаватели &#8594;</a>
+    </div>";
   $html_links_to_teachers .= '</div>';
   # print $html_links_to_teachers."\n";
   # exit;
