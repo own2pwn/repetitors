@@ -25,10 +25,21 @@ sub start {
 sub button_main_page {
   my ($refCONTEXT,$key) = @_;
 
+  my ($path, $text_for_button) = ('Назад', $refCONTEXT->{domain});
+  # Путь на обратную страницу и соотвествующий текст
+  if ($refCONTEXT->{'path_to_teacher_page'}){
+    $path = $refCONTEXT->{'path_to_teacher_page'};
+    $text_for_button = 'Вернуться на страницу преподавателя';
+  }
+  elsif ($refCONTEXT->{'path_to_place_teachers'}){
+    $path = $refCONTEXT->{'path_to_place_teachers'};
+    $text_for_button = 'Вернуться на страницу размещения преподавателей';
+  }
+  # my $path = $refCONTEXT->{'path_to_teacher_page'} || $refCONTEXT->{'path_to_place_teachers'};
 
-
-  # Ссылка на первую страницу
-  my $html_button_main_page = "<br style='margin-bottom:15px;'><a href='$refCONTEXT->{'path_to_teacher_page'}' class='button'>Вернуться на страницу преподавателя</a>";
+  # Ссылка на предыдущую страницу
+  # (стр преподавателя или размещения репетитора)
+  my $html_button_main_page = "<br style='margin-bottom:15px;'><a href='$path' class='button'>$text_for_button</a>";
   my $css_button_main_page = <<"EOF";
   a.button {
     font-weight: 700;
@@ -39,6 +50,7 @@ sub button_main_page {
     background: rgb(64,199,129);
     box-shadow: 0 -3px rgb(53,167,110) inset;
     transition: 0.2s;
+    white-space:nowrap;
   }
  a.button:hover { background: rgb(53, 167, 110); }
  a.button:active {

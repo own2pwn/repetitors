@@ -36,7 +36,6 @@ use build_path;
 use http;
 use collapse;
 use wf;
-use write_env;
 
 my %CONTEXT = ('min' => 0, collapse => $c->{collapse}, domain => $c -> {domain}, api_js => $c -> {api_js});
 base_teachers::start(\%CONTEXT,'base_teachers');

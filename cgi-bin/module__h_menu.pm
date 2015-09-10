@@ -52,11 +52,12 @@ sub Pr_list_links_teacher {
 }
 
 # Собираем менее приоритетных преподавателей
+# TODO: получать subjects из модуля base_subjects.pm
 sub Not_pr_list_links_teacher {
   my ($refCONTEXT, $key) = @_;
   my @subjects = ('mathematics', 'russian_language', 'english_language');
 
-  my $hash_teach_links = $refCONTEXT -> {'base_links_to_teachers'};
+  my $hash_teach_links = $refCONTEXT -> {'base_links_to_teachers'} || {};
   my $teacher_id       = $refCONTEXT -> {'teacher'};
 
   foreach my $sub (@subjects) {

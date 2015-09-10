@@ -21,7 +21,13 @@ sub teachers_subjects {
   my ($domain,$subject) = @_;
   my $path = $domain.'/cgi-bin/all_teachers/all_teachers.pl/';
   return $path.cgi_url::proccesing_url_keys({'action' => 'all_teachers', 'sub' => $subject},'&amp;');
-  # return $domain.cgi_url::proccesing_url_keys({'action' => 'all_teachers', 'sub' => $subject},'&amp;');
+}
+
+# ---------------------------------------- Формируем URL для ссылок на страницу для размещения преподавателя  -------------------------------------------------------------
+sub place_teachers {
+  my ($domain) = @_;
+  my $path = $domain.'/cgi-bin/place_teachers/place_teachers.pl';
+  return $path.cgi_url::proccesing_url_keys({'action' => 'place_teachers'},'&amp;');
 }
 
 1;

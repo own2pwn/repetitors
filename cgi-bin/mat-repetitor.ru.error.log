@@ -1,0 +1,108 @@
+[Thu Sep 10 00:41:45 2015] [error] [client 157.55.39.96] File does not exist: /home/andrey7/www/mat-repetitor.ru/robots.txt
+[Thu Sep 10 00:50:26 2015] [error] [client 212.83.177.193] File does not exist: /home/andrey7/www/mat-repetitor.ru/robots.txt
+[Thu Sep 10 01:10:27 2015] [error] [client 95.64.145.211] File does not exist: /home/andrey7/www/mat-repetitor.ru/favicon.ico
+[Thu Sep 10 01:10:29 2015] [error] [client 95.64.145.211] File does not exist: /home/andrey7/www/mat-repetitor.ru/favicon.ico, referer: http://mat-repetitor.ru/
+[Thu Sep 10 02:45:10 2015] [error] [client 199.58.86.206] File does not exist: /home/andrey7/www/mat-repetitor.ru/robots.txt
+[Thu Sep 10 02:45:13 2015] [error] [client 199.58.86.206] File does not exist: /home/andrey7/www/mat-repetitor.ru/robots.txt
+[Thu Sep 10 05:24:11 2015] [error] [client 213.248.32.214] File does not exist: /home/andrey7/www/mat-repetitor.ru/robots.txt
+[Thu Sep 10 05:24:12 2015] [error] [client 213.248.32.214] File does not exist: /home/andrey7/www/mat-repetitor.ru/robots.txt
+[Thu Sep 10 06:34:47 2015] [error] [client 199.16.156.124] File does not exist: /home/andrey7/www/mat-repetitor.ru/robots.txt
+[Thu Sep 10 07:28:11 2015] [error] [client 37.140.141.37] File does not exist: /home/andrey7/www/mat-repetitor.ru/robots.txt
+[Thu Sep 10 08:05:14 2015] [error] [client 5.255.253.131] File does not exist: /home/andrey7/www/mat-repetitor.ru/robots.txt
+[Thu Sep 10 10:30:09 2015] [error] [client 81.19.73.103] File does not exist: /home/andrey7/www/mat-repetitor.ru/favicon.ico
+[Thu Sep 10 10:30:10 2015] [error] [client 81.19.73.103] File does not exist: /home/andrey7/www/mat-repetitor.ru/favicon.ico
+[Thu Sep 10 10:40:13 2015] [error] [client 81.19.73.103] script not found or unable to stat: /home/andrey7/www/mat-repetitor.ru/cgi-bin/place_teahers
+[Thu Sep 10 10:40:41 2015] [error] [client 81.19.73.103] script not found or unable to stat: /home/andrey7/www/mat-repetitor.ru/cgi-bin/place_teahers
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] summary_mathematics_physics = \xd0\xa0\xd0\xb0\xd0\xb7\xd0\xbc\xd0\xb5\xd1\x81\xd1\x82\xd0\xb8\xd1\x82\xd1\x8c \xd1\x80\xd0\xb5\xd0\xb7\xd1\x8e\xd0\xbc\xd0\xb5 \xd1\x80\xd0\xb5\xd0\xbf\xd0\xb5\xd1\x82\xd0\xb8\xd1\x82\xd0\xbe\xd1\x80\xd0\xb0 \xd0\xbf\xd0\xbe \xd0\xbc\xd0\xb0\xd1\x82\xd0\xb5\xd0\xbc\xd0\xb0\xd1\x82\xd0\xb8\xd0\xba\xd0\xb5 (\xd0\xb0\xd0\xbb\xd0\xb3\xd0\xb5\xd0\xb1\xd1\x80\xd0\xb5/\xd0\xb3\xd0\xb5\xd0\xbe\xd0\xbc\xd0\xb5\xd1\x82\xd1\x80\xd0\xb8\xd0\xb8) \xd0\xb8\xd0\xbb\xd0\xb8 \xd1\x84\xd0\xb8\xd0\xb7\xd0\xb8\xd0\xba\xd0\xb5)
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] summary_russian_language = \xd0\xa0\xd0\xb0\xd0\xb7\xd0\xbc\xd0\xb5\xd1\x81\xd1\x82\xd0\xb8\xd1\x82\xd1\x8c \xd1\x80\xd0\xb5\xd0\xb7\xd1\x8e\xd0\xbc\xd0\xb5 \xd1\x80\xd0\xb5\xd0\xbf\xd0\xb5\xd1\x82\xd0\xb8\xd1\x82\xd0\xbe\xd1\x80\xd0\xb0 \xd0\xbf\xd0\xbe \xd1\x80\xd1\x83\xd1\x81\xd1\x81\xd0\xba\xd0\xbe\xd0\xbc\xd1\x83 \xd1\x8f\xd0\xb7\xd1\x8b\xd0\xba\xd1\x83 (\xd0\xbb\xd0\xb8\xd1\x82\xd0\xb5\xd1\x80\xd0\xb0\xd1\x82\xd1\x83\xd1\x80\xd0\xb5):
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] summary_english_language = \xd0\xa0\xd0\xb0\xd0\xb7\xd0\xbc\xd0\xb5\xd1\x81\xd1\x82\xd0\xb8\xd1\x82\xd1\x8c \xd1\x80\xd0\xb5\xd0\xb7\xd1\x8e\xd0\xbc\xd0\xb5 \xd1\x80\xd0\xb5\xd0\xbf\xd0\xb5\xd1\x82\xd0\xb8\xd1\x82\xd0\xbe\xd1\x80\xd0\xb0 \xd0\xbf\xd0\xbe \xd0\xb0\xd0\xbd\xd0\xb3\xd0\xbb\xd0\xb8\xd0\xb9\xd1\x81\xd0\xba\xd0\xbe\xd0\xbc\xd1\x83 \xd1\x8f\xd0\xb7\xd1\x8b\xd0\xba\xd1\x83:
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   (function () {, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] , referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]     addCss(', referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   .button {, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   display: inline-block;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   width: 100%;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   height: 2em;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   font-size: 100%;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   color:#e5216a;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   line-height: 1.5em;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   vertical-align: middle;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   text-align: center;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   text-decoration: none;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   user-select: none;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] , referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   outline: none;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   border: 1px solid rgba(0,0,0,.4);, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   border-top-color: rgba(0,0,0,.3);, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   border-radius: 5px;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   background: linear-gradient(rgb(255,255,255), rgb(240,240,240));, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   box-shadow:, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]    0 0 3px rgba(0,0,0,0) inset,, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]    0 1px 1px 1px rgba(255,255,255,.2),, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]    0 -1px 1px 1px rgba(0,0,0,0);, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   transition: .2s ease-in-out;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] }, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] .button:hover:not(:active) {, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   box-shadow:, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]    0 0 3px rgba(0,0,0,0) inset,, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]    0 1px 1px 1px rgba(0,255,255,.5),, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]    0 -1px 1px 1px rgba(0,255,255,.5);, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] }, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] .button:active {, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   background: linear-gradient(rgb(250,250,250), rgb(235,235,235));, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   box-shadow:, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]    0 0 3px rgba(0,0,0,.5) inset,, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]    0 1px 1px 1px rgba(255,255,255,.4),, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]    0 -1px 1px 1px rgba(0,0,0,.1);, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] }, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] , referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] , referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] , referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] /* \xd0\x9e\xd1\x82\xd1\x81\xd1\x82\xd1\x83\xd0\xbf \xd1\x81\xd0\xb2\xd0\xb5\xd1\x80\xd1\x85\xd1\x83 \xd0\xb8 \xd1\x81\xd0\xbd\xd0\xb8\xd0\xb7\xd1\x83 \xd0\xb4\xd0\xbb\xd1\x8f \xd0\xbf\xd0\xbe\xd0\xbb\xd1\x8f \xd1\x82\xd0\xb5\xd0\xbb\xd0\xb5\xd1\x84\xd0\xbe\xd0\xbd\xd0\xb0 */, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] .form_style {, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]     width:95%;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]     font-size:16px;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]     border: 2px solid #777;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]     border-radius:8px;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]     margin-top:15px;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]     margin-bottom:15px;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]     padding:2px;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] }, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   ');, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] , referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]     var massivAttributeFiled= ["summary_mathematics_physics","summary_russian_language","summary_english_language",];, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]     var text_all_form = ""; /* \xd0\x92\xd1\x81\xd1\x8f \xd1\x84\xd0\xbe\xd1\x80\xd0\xbc\xd0\xb0 */, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]     for (var i = 0, l = massivAttributeFiled.length; i < l; i++) {, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] , referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]       var attributeFiled = massivAttributeFiled[i];, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]       console.log('\xd0\x90\xd1\x82\xd1\x82\xd1\x80\xd0\xb8\xd0\xb1\xd1\x83\xd1\x82 \xd0\xbf\xd0\xbe\xd0\xbb\xd1\x8f =' + attributeFiled);, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] , referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]       text_all_form+="<form action='http://mat-repetitor.ru/cgi-bin/order_call_place_teachers/order_call_place_teachers.pl'>";, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]              text_all_form+= "<input type=hidden name=action value=order_call_place_teachers>";, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]              text_all_form+= "<input type=hidden name=sub value='" + attributeFiled + "'>";, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]              text_all_form+="<input class=form_style ";, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]                        text_all_form+= "name='ph' ";, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]                        text_all_form+= "type='text' maxlength='255' ";, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]                        text_all_form+= "placeholder='\xd0\x92\xd0\xb2\xd0\xb5\xd0\xb4\xd0\xb8\xd1\x82\xd0\xb5 \xd1\x82\xd0\xb5\xd0\xbb\xd0\xb5\xd1\x84\xd0\xbe\xd0\xbd' /> <br>";, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]             text_all_form+= "<input class='button' type='submit' value='\xd0\x97\xd0\xb0\xd0\xba\xd0\xb0\xd0\xb7\xd0\xb0\xd1\x82\xd1\x8c \xd0\xb7\xd0\xb2\xd0\xbe\xd0\xbd\xd0\xbe\xd0\xba'>";, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]           text_all_form+= "</form>";, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] , referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] , referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] , referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   console.log(text_all_form);, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   console.log(attributeFiled);, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   document.getElementById(attributeFiled).innerHTML = text_all_form;, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   text_all_form="";, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]     }, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] , referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103] , referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:40:55 2015] [error] [client 81.19.73.103]   }());, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:41:24 2015] [error] [client 81.19.73.103] Type of arg 1 to keys must be hash (not private variable) at order_call_place_teachers.pl line 97, near "$INFO) ", referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:41:24 2015] [error] [client 81.19.73.103] Execution of order_call_place_teachers.pl aborted due to compilation errors., referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:41:24 2015] [error] [client 81.19.73.103] Premature end of script headers: order_call_place_teachers.pl, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:41:46 2015] [error] [client 81.19.73.103] Type of arg 1 to keys must be hash (not private variable) at order_call_place_teachers.pl line 97, near "$INFO) ", referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:41:46 2015] [error] [client 81.19.73.103] Execution of order_call_place_teachers.pl aborted due to compilation errors., referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:41:46 2015] [error] [client 81.19.73.103] Premature end of script headers: order_call_place_teachers.pl, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:41:57 2015] [error] [client 81.19.73.103] Type of arg 1 to keys must be hash (not private variable) at order_call_place_teachers.pl line 97, near "$INFO) ", referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:41:57 2015] [error] [client 81.19.73.103] Execution of order_call_place_teachers.pl aborted due to compilation errors., referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl
+[Thu Sep 10 10:41:57 2015] [error] [client 81.19.73.103] Premature end of script headers: order_call_place_teachers.pl, referer: http://mat-repetitor.ru/cgi-bin/place_teachers/place_teachers.pl

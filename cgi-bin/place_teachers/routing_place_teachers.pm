@@ -1,4 +1,4 @@
-package routing_all_teachers;
+package routing_place_teachers;
 #!/usr/bin/perl
 # use 5.016;
 use strict;
@@ -14,6 +14,7 @@ use strict;
 # use cgi_url;
 # use http;
 # use wf;
+# use write_env;
 
 
 # my %CONTEXT = ('min' => 0, collapse => $c->{collapse}, domain => $c -> {domain});
@@ -22,7 +23,7 @@ my $path_log = '../../log/script.txt';
 
 
 
-# РОУТИНГ ДЛЯ ROUTING_ALL_TEACHERS.PL
+# РОУТИНГ ДЛЯ ROUTING_PLACE_TEACHERS.PL
 
 # start(\%CONTEXT);
 sub start {
@@ -37,18 +38,19 @@ sub start {
 
 sub Routing {
   my $refCONTEXT = shift;
-  my $subject = $refCONTEXT -> {'hash_cgi'} -> {'sub'} || 'all';
+  # Сделано для того чтобы в вертикальном меню выводились все пункты
+  my $subject = '';
 
   # write_env::start('./../env.txt');
   # wf::save_to_file($path_log,'');
 
   # Главная страница
   if (!$ENV{'QUERY_STRING'} && $ENV{'REQUEST_URI'} eq $ENV{SCRIPT_NAME}) {
-    $refCONTEXT -> {'subject'} = 'all';
+    $refCONTEXT -> {'subject'} = '';
     # $cur_url = '/';
     wf::add_to_file($path_log,
-      "Пришли на $ENV{SCRIPT_NAME} (все преподаватели) без параметров редирект на $refCONTEXT->{domain}\n\n");
-    http::redirect(302,$refCONTEXT -> {domain});
+      "Пришли на $ENV{SCRIPT_NAME} (размещение преподавателей) без параметров редирект на $refCONTEXT->{domain}\n\n");
+    &{$refCONTEXT->{App}}
   }
   # Есть параметры в URL
   else {
@@ -76,7 +78,7 @@ sub exists_param_in_url {
     }
     else {
       $refCONTEXT -> {'subject'} = $subject;
-      wf::add_to_file($path_log,"Запуск приложения all_teachers.pl\n\n");
+      wf::add_to_file($path_log,"Запуск приложения place_teachers.pl\n\n");
       &{$refCONTEXT->{App}}
     }
   }

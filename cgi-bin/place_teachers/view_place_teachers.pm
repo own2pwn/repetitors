@@ -1,26 +1,26 @@
-package view_all_teachers;
+package view_place_teachers;
 #!/usr/bin/perl
 use strict;
 use Data::Dumper;
 
-# ШАБЛОН ОТОБРАЖЕНИЯ СТРАНИЦ ПРЕПОДАВАТЕЛЕЙ ПО ПРЕДМЕТАМ
+# ШАБЛОН ОТОБРАЖЕНИЯ СТРАНИЦЫ РАЗМЕЩЕНИЯ ПРЕПОДАВАТЕЛЯ
 
-use lib '../css';
-use base_css;
-use column_css;
+# use lib '../css';
+# use base_css;
+# use column_css;
 
 #########################
 sub start {
   my ($refCONTEXT,$key) = @_;
   base_css::start($refCONTEXT,'base_css');
-  view_index($refCONTEXT,$key);
+  view_place_teachers($refCONTEXT,$key);
   # print $CONTEXT{$key};
 }
 
 
 
-# ----------------------------------------------------- VIEW ПЕРВОЙ СТРАНИЦЫ И СТРАНИЦ ПРЕПОДАВАТЕЛЕЙ -------------------------------------------------------------
-sub view_index {
+# ----------------------------------------------------- VIEW СТРАНИЦЫ РАЗМЕЩЕНИЯ ПРЕПОДАВАТЕЛЯ -------------------------------------------------------------
+sub view_place_teachers {
   my ($refCONTEXT,$key) = @_;
 
   my $subject = $refCONTEXT -> {'subject'};
@@ -31,9 +31,9 @@ sub view_index {
   <meta charset=utf-8>
 EOF
 
-  $data.= $refCONTEXT->{base_subjects}->{$subject}->{title} || '';
-  $data.= $refCONTEXT->{base_subjects}->{$subject}->{description} || '';
-  $data.= $refCONTEXT->{base_subjects}->{$subject}->{keywords} || '';
+  $data.= $refCONTEXT->{base_seo}->{title}->{html}       || '';
+  $data.= $refCONTEXT->{base_seo}->{description}->{html} || '';
+  $data.= $refCONTEXT->{base_seo}->{keywords}->{html}    || '';
 
 $data.= <<"EOF";
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -141,14 +141,15 @@ $data .= <<"EOF";
 EOF
 
   $data.= '<div class=main_table_column_first>';
-    $data.= $refCONTEXT->{links_to_teachers}->{html} || '';
+    # $data.= $refCONTEXT->{links_to_teachers}->{html} || '';
     $data.= $refCONTEXT->{menu_teachers_by_subjects}->{html} || '';
     $data.= $refCONTEXT->{social_net}->{html} || '';
   $data.= '</div>';
 
 
 $data.= '<div class="main_table_column_second" style="text-align:center">';
-  $data.= $refCONTEXT->{collect_teachers}->{html} || '';
+  $data.= $refCONTEXT->{text_for_place_teachers}->{html} || '';
+  $data.= $refCONTEXT->{form_order_call}->{html} || '';
 $data.= '</div>';
 
 $data.= <<"EOF";
@@ -174,6 +175,7 @@ $data.= <<"EOF";
      }
     $refCONTEXT->{'insert_contact_js'}->{js}
     $refCONTEXT->{'header'}->{js}
+    $refCONTEXT->{form_order_call}->{js}
     $refCONTEXT->{'main_menu'}->{js}
   </script>
 EOF

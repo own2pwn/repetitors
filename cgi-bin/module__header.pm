@@ -9,9 +9,10 @@ use strict;
 sub start {
   my ($refCONTEXT,$key) = @_;
 
-  my %hash_teach = %{$refCONTEXT -> {'base_teachers'}};
+  # my %hash_teach = %{$refCONTEXT -> {'base_teachers'}} || ();
+  my $hash_teach = $refCONTEXT -> {'base_teachers'} || {};
   my $teacher_id = $refCONTEXT -> {'teacher'};
-  my $name = ($hash_teach{$teacher_id} && $hash_teach{$teacher_id} -> {'name'}) ? $hash_teach{$teacher_id} -> {'name'} : 'Mat';
+  my $name = ($hash_teach -> {$teacher_id} -> {'name'}) ? $hash_teach -> {$teacher_id} -> {'name'} : 'Mat';
   $refCONTEXT -> {'start_logo'} = $name;
   header($refCONTEXT,$key);
   # print $CONTEXT{$key}{'html'};
