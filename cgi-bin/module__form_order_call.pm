@@ -21,19 +21,22 @@ sub start {
 sub form_order_call {
   my ($refCONTEXT,$key) = @_;
 
-  my %hash_teach = %{$refCONTEXT -> {'base_teachers'}};
-  my $teacher_id = $refCONTEXT -> {'teacher'};
+  my $hash_teach       = $refCONTEXT -> {'base_teachers'};
+  my $teacher_id       = $refCONTEXT -> {'teacher'};
+  my $key_regions      = $hash_teach -> {$teacher_id} -> {'key_regions'}            || {};
+  my $sort_key_regions = $hash_teach -> {$teacher_id} -> {'key_regions_sort_order'} || [];
 
-  my %key_regions = %{$hash_teach{$teacher_id} -> {'key_regions'}};
+
   my $html_form_order_call = "<div id=forms style='width:90%;margin-top:20px;border-top:2px solid #999;'>";
 
-  foreach my $regions (sort { $key_regions{$a} cmp $key_regions{$b} } keys %key_regions ) {
-    my $field_name = $key_regions{$regions}->[0];
+  foreach my $id (@$sort_key_regions) {
+    # my $field_name = $key_regions -> {$regions} -> [0];
+    my $field_name = $key_regions -> {$id} -> [0];
     # print "$field_name\n";
     $html_form_order_call.= "
     <div class=frame>
-        <span class=phrase_form> $regions </span>
-        <div id=$field_name>
+        <span class=phrase_form> $field_name </span>
+        <div id=$id>
 
         </div>
     </div>\n";

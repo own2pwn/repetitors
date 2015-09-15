@@ -43,7 +43,7 @@ sub links_to_teachers {
   foreach my $id (keys %$hash_teach_links) {
     next if $id == $teacher_id;
       if ($hash_teach_links->{$id}->{title}) {
-        my $teacher_link = build_path_to_teacher_page($domain,$id);
+        my $teacher_link = build_path::build_path_to_teacher_page($domain,$id);
         my $teacher_title = $hash_teach_links->{$id}->{title};
         $html_links_to_teachers .= "
         <p style='text-align:left'>
@@ -51,11 +51,8 @@ sub links_to_teachers {
         </p>";
     }
   }
-  my $all_teachers_link = build_path::teachers_subjects($domain,'all').'#teachers_by_subject';
-  # $html_links_to_teachers .= "
-  #   <div style='border:1px solid #eee'>
-  #     <a style='color:#CC3366;white-space:nowrap;text-decoration:none;' href='$all_teachers'>Все преподаватели &#8594;</a>
-  #   </div>";
+  my $all_teachers_link = build_path::teachers_subjects($domain,'all');
+
   $html_links_to_teachers .= "
     <div style='font-size:90%;margin-top:30px;border:2px solid #CC3366;border-radius:12px;padding:5px 3%'>
       <a style='color:#CC3366;white-space:nowrap;text-decoration:none;' href='$all_teachers_link'>Все преподаватели &#8594;</a>
@@ -96,11 +93,5 @@ EOF
   $refCONTEXT -> {$key} -> {'js'} = $js_links_to_teachers;
 }
 
-
-# Строим ссылки на страницы преподавателей
-sub build_path_to_teacher_page {
-  my ($domain,$teacher_id) = @_;
-  return $domain.cgi_url::proccesing_url_keys({'action' => 'teacher', 'id' => $teacher_id},'&amp;');
-}
 
 1;

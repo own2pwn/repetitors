@@ -6,6 +6,8 @@ use base_teachers;
 # Число или нет
 use Scalar::Util qw(looks_like_number);
 
+# TODO: ПЕРЕПИСАТЬ ПО АНЛОГИИ С AJAX СКРИПТОМ В ORDER_CALL_PLACE_TEACHERS.PL
+
 # CКРИПТ (ОБРАЩАЕМСЯ К НЕМУ ПО AJAX): ВОЗВРАЩАЕТ HTML ФОРМЫ "ЗАКАЗА ЗВОНКА", СОБРАННЫЙ JS, ПЛЮС CSS
 
 my %CONTEXT = ('min' => 0 );
@@ -105,14 +107,15 @@ sub form_order_call {
 
   ";
 
-  my %hash_teach = %{$refCONTEXT -> {'base_teachers'}};
+  my $hash_teach = $refCONTEXT -> {'base_teachers'};
   my $teacher_id = $refCONTEXT -> {'teacher'};
 
-  my %key_regions = %{$hash_teach{$teacher_id} -> {'key_regions'}};
+  my $key_regions      = $hash_teach -> {$teacher_id} -> {'key_regions'}            || {};
+  my $sort_key_regions = $hash_teach -> {$teacher_id} -> {'key_regions_sort_order'} || [];
   # Собираем строку (массив JS) имен полей и полей заказа (одновременно) звонка
   my $str_field_name = '[';
-  foreach my $regions (sort { $key_regions{$b} cmp $key_regions{$a} } keys %key_regions ) {
-    $str_field_name.= "\"".$key_regions{$regions} -> [0]."\",";
+  foreach my $id (@$sort_key_regions) {
+    $str_field_name.= "\"$id\",";
   }
   $str_field_name.= '];';
   # print "Массив имен $str_field_name\n";

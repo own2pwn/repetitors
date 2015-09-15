@@ -1,2 +1,6 @@
-Пришли на  (заказ звонка для размещения преподавателя) без параметров редирект на http://
+Введенный: ?action=order_call&id=1&region=call_Balashiha&ph=%2b7(906)095-92-31
+Собранный: ?action=order_call&id=1&region=call_Balashiha&ph=%2b7(906)095-92-31
+Запуск приложения /cgi-bin/order_call/order_call_3.pl
+
+Запуск приложения (это главная страница)
 

@@ -71,7 +71,6 @@ sub Not_pr_list_links_teacher {
 # Добавляем в массив подходящих по условию преподавателей
 sub push_ar_list {
   my ($refCONTEXT, $key) = @_;
-  # my ($ar_links_to_teachers, $count_add ) = @_;
   my $ar_links_to_teachers = $refCONTEXT -> {$key};
   my $count_add            = $refCONTEXT -> {'count_add'};
   my $hash_teach_links     = $refCONTEXT -> {'base_links_to_teachers'};
@@ -92,7 +91,7 @@ sub push_ar_list {
     }
   }
   $refCONTEXT -> {'count_add'} = $count_add;
-  $refCONTEXT ->{$key} = $ar_links_to_teachers;
+  $refCONTEXT -> {$key} = $ar_links_to_teachers;
 }
 
 
@@ -119,17 +118,19 @@ sub View_js_ar_links_to_teachers {
 sub menu {
   my ($refCONTEXT,$key) = @_;
 
+  my $domain = $refCONTEXT->{domain};
+  my $place_teachers_link = build_path::place_teachers($domain);
 
   my $html_menu =<<"EOF";
   <div class=main_table_column_h_menu>
     <ul id='h_menu' class=h_menu>
 
       <li>
-        <a id=h_menu_item_1_show class=h_menu_links href="#">Репетиторы</a>
+        <span id=h_menu_item_1_show class=h_menu_links >Репетиторы</span>
       </li>
 
       <li>
-        <a id=h_menu_item_2_show class=h_menu_links href="#">Разместить резюме репетитора</a>
+        <a class=h_menu_links href=$place_teachers_link>Разместить резюме репетитора</a>
       </li>
 
     </ul>
@@ -181,6 +182,7 @@ EOF
     display:inline-block;
     list-style:none;
     margin: 5px 2%;
+    cursor: pointer;
     /*border: 3px solid brown;*/
   }
 
@@ -226,15 +228,13 @@ EOF
   /*Крестик и тексты внутри всплывающего блока*/
   .cross{
     float:right;
-    width:4%;
+    padding: 0 5px;
     text-align:center;
-    margin-right:-5px;
-    margin-top:-5px;
-    line-height:1;
+    line-height:.9;
     color:#666;
     cursor:pointer;
-    font-size: 200%;
-    /*border: 2px solid brown;*/
+    font-size: 150%;
+    /*border: .5px solid brown;*/
   }
 
   .h_menu_links_teachers p{
@@ -244,19 +244,30 @@ EOF
     line-height: 2;
     /*border: 2px solid black*/
   }
+';
+# margin-right:-5px;
+# margin-top:-5px;
+# офрмление пунктов меню(один пункт span, а другой a)
+my $item_menu = '
+  font-size: 95%;
+  font-weight: 100;
+  color: #33f;
+  text-shadow: none;
+  text-decoration:underline;
+';
 
-  .h_menu_links_teachers a{
-    font-size: 95%;
-    font-weight: 100;
-    color: #33f;
-    text-shadow: none;
-    text-decoration:underline
-  }
-  .h_menu_links_teachers a:hover{color:#CC3366;}
-  ';
+my $item_menu_hover = 'color:#CC3366;';
+
+# пункты меню
+$css_menu .= "
+  .h_menu_links_teachers a{$item_menu}
+  .h_menu_links_teachers a:hover{$item_menu_hover}
+  .h_menu_links_teachers span{$item_menu}
+  .h_menu_links_teachers span:hover{$item_menu_hover}
+  ";
 
   my $all_teachers_link =
-  build_path::teachers_subjects($refCONTEXT->{domain},'all').'#teachers_by_subject';
+  build_path::teachers_subjects($domain,'all');
 
   # Perl вставляет массив ссылок на преподавателей
   my $js_menu =<<"EOF";
@@ -264,7 +275,7 @@ EOF
 
     $refCONTEXT->{'js_ar_links_teacher'},
 
-    itemId = {'item_1_PopUp' : false, 'item_2_PopUp' : false };
+    itemId = {'item_1_PopUp' : false,};
 
     getByID('h_menu').onclick = function(e) {
       var t = e && e.target || e.srcElement,m;
@@ -324,7 +335,7 @@ EOF
     function Insert_Html(strIn, numId){
       var html ="<div id='h_menu_item_" + numId + "_triangle' class=triangle></div>\\
       <div id='h_menu_item_" + numId + "_pop_up'  class='pop_up h_menu_links_teachers'>\\
-        <div id='h_menu_item_" + numId + "_hide' class=cross>&times;</div>" +
+        <div id='h_menu_item_" + numId + "_hide' class=cross>&times;</div><p style=clear:both></p>" +
         strIn +
       "</div>";
       getByID('h_menu_item_' + numId + '_show').insertAdjacentHTML('beforeEnd', html);
@@ -341,14 +352,15 @@ EOF
       return strIn;
     }
 
-    function assembly_warnings() {
-      return "<p>\\
-               <span style='color:black;font-style:italic'>Извините, данная возможность в ближайшее время будет доступна!</span>\\
-              </p>";
-    }
   }());
 
 EOF
+
+# function assembly_warnings() {
+#   return "<p>\\
+#            <span style='color:black;font-style:italic'>Извините, данная возможность в ближайшее время будет доступна!</span>\\
+#           </p>";
+# }
 
   my $js_menu_min =<<"EOF";
 EOF

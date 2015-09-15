@@ -13,7 +13,7 @@ use config;
 my $c = config::settings();
 
 
-# TODO: Разбить на модули данный скрипт!!!
+# TODO: ПЕРЕПИСАТЬ В БУДУЩЕМ ПО АНАЛОГИИ С ORDER_CALL_PLACE_TEACHERS.PL
 use base_teachers;
 use module__metrica_analytics_js;
 
@@ -70,7 +70,7 @@ sub App {
 # и в случае отсуствия у преподавател имени и неправильного региона
 sub Validate_Teacher_Name {
   my $refCONTEXT = shift;
-  my $teacher_id = $refCONTEXT -> {'teacher'};
+  my $teacher_id = cgi_url::decode($refCONTEXT -> {'teacher'});
   # Счетчик валидации телефона
   # ok –– все правильно, phone_isnot_right –– ошибка в телефоне
   $refCONTEXT -> {'correctness_data'} = 'ok';
@@ -90,26 +90,31 @@ sub Validate_Teacher_Name {
 
   $refCONTEXT -> {'teacher_text_email'} = $teacher_text_email;
 }
+
 # Проверка наличия у преподавателя названия региона
 sub Validate_Region_Name {
   my $refCONTEXT = shift;
-  my $teacher_id = $refCONTEXT -> {'teacher'};
-  my $region_url = $refCONTEXT -> {'region'};
-  my $ph = $refCONTEXT -> {'ph'};
+  my $teacher_id = cgi_url::decode($refCONTEXT -> {'teacher'});
+  my $region_url = cgi_url::decode($refCONTEXT -> {'region'});
+  my $ph         = cgi_url::decode($refCONTEXT -> {'ph'});
 
   my $ref_info_teacher = $refCONTEXT->{'base_teachers'} -> {$teacher_id};
 
   # {'Репетитор в таком-то регионе' => ['имя input и value регион','текст для email'], }
-  my $ref_key_regions = $ref_info_teacher -> {'key_regions'};
+  my $ref_key_regions = $ref_info_teacher -> {'key_regions'}  || {};
+  # my $sort_key_regions = $hash_teach -> {$teacher_id} -> {'key_regions_sort_order'} || [];
   my $region_text_email = '';
-  foreach my $region (keys %$ref_key_regions) {
-    my $field_name = $ref_key_regions -> {$region} -> [0];
-    if ($field_name eq $region_url) {
-      # Текст для email
-      my $email_text = $ref_key_regions -> {$region} -> [1];
-      $region_text_email = $email_text;
-    }
+  if ($ref_key_regions->{$region_url}){
+    $region_text_email = $ref_key_regions->{$region_url}->[1];
   }
+  # foreach my $region (keys %$ref_key_regions) {
+  #   my $field_name = $ref_key_regions -> {$region} -> [0];
+  #   if ($field_name eq $region_url) {
+  #     # Текст для email
+  #     my $email_text = $ref_key_regions -> {$region} -> [1];
+  #     $region_text_email = $email_text;
+  #   }
+  # }
   if ($region_text_email eq '') {
     $region_text_email = "Название региона не определено(в базе ни одно поле не совпало с таким регионом). ID: $teacher_id\n";
     $refCONTEXT -> {'count_error'} = 1;
@@ -123,7 +128,7 @@ sub Validate_Region_Name {
 
 sub Validate_Phone {
   my $refCONTEXT = shift;
-  my $ph = $refCONTEXT->{'ph'};
+  my $ph = cgi_url::decode($refCONTEXT->{'ph'});
   if ($ph!~/[\d\-\+()]{9,}/i) {
     $refCONTEXT -> {'correctness_data'} = 'phone_isnot_right';
   }
@@ -136,9 +141,9 @@ sub Assembly_Html {
   # HTML
   my $data = '';
   # Телефон, имя преподавателя, название региона
-  my $ph = $refCONTEXT->{'ph'};
-  my $teacher_text_email = $refCONTEXT->{'teacher_text_email'};
-  my $region_text_email = $refCONTEXT->{'region_text_email'};
+  my $ph                 = cgi_url::decode($refCONTEXT->{'ph'});
+  my $teacher_text_email = cgi_url::decode($refCONTEXT->{'teacher_text_email'});
+  my $region_text_email  = cgi_url::decode($refCONTEXT->{'region_text_email'});
   if ($refCONTEXT -> {'correctness_data'} eq 'ok') {
     $data= <<"EOF";
     Спасибо, за заказ. <br>
@@ -174,9 +179,9 @@ sub Preparation_For_Sending_Email {
   my @mailboxs = ('qwertyzxcv526@gmail.com', 'marianna.repetitor@gmail.com', 'mat.repetitors@yandex.ru');
   my $subject = 'Заказали звонок '.get_time::time_email();
 
-  my $teacher_text = $refCONTEXT -> {'teacher_text_email'};
-  my $phone = $refCONTEXT -> {'ph'};
-  my $region_text = $refCONTEXT -> {'region_text_email'};
+  my $teacher_text = cgi_url::decode($refCONTEXT -> {'teacher_text_email'});
+  my $phone        = cgi_url::decode($refCONTEXT -> {'ph'});
+  my $region_text  = cgi_url::decode($refCONTEXT -> {'region_text_email'});
 
   # Если все правильно или случилась ошибка данных, то отсылаем данные на email,
   # в случае неверного телефона введенного пользователем делаем запись в логи

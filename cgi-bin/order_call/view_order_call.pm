@@ -2,7 +2,7 @@ package view_order_call;
 #!/usr/bin/perl
 use strict;
 
-# ШАБЛОН ОТОБРАЖЕНИЯ СТРАНИЦЫ ЗАКАЗА ЗВОНКА
+# ШАБЛОН ОТОБРАЖЕНИЯ СТРАНИЦЫ ЗАКАЗА ЗВОНКА(ПРЕПОДАВАТЕЛЬ)
 
 use lib './css';
 use base_css;

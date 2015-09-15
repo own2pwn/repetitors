@@ -3,7 +3,6 @@ package build_path;
 use strict;
 use CGI;
 
-# use 5.010;
 # use Data::Dumper;
 
 # СКРИПТ СОБИРАЮЩИЕ РАЗНЫЕ ПУТИ
@@ -20,14 +19,19 @@ sub build_path_to_teacher_page {
 sub teachers_subjects {
   my ($domain,$subject) = @_;
   my $path = $domain.'/cgi-bin/all_teachers/all_teachers.pl/';
-  return $path.cgi_url::proccesing_url_keys({'action' => 'all_teachers', 'sub' => $subject},'&amp;');
+  # в конце ссылки добавляем #teachers_by_subject
+  # для удобства навигации
+  return $path.cgi_url::proccesing_url_keys({'action' => 'all_teachers', 'sub' => $subject},'&amp;').'#teachers_by_subject';
 }
 
 # ---------------------------------------- Формируем URL для ссылок на страницу для размещения преподавателя  -------------------------------------------------------------
 sub place_teachers {
   my ($domain) = @_;
   my $path = $domain.'/cgi-bin/place_teachers/place_teachers.pl';
-  return $path.cgi_url::proccesing_url_keys({'action' => 'place_teachers'},'&amp;');
+  # в конце ссылки добавляем #text_place
+  # для удобства навигации
+  return $path.cgi_url::proccesing_url_keys({'action' => 'place_teachers'},'&amp;').'#text_place';
 }
+
 
 1;

@@ -10,18 +10,20 @@ use strict;
 sub start {
   my ($refCONTEXT,$key) = @_;
 
-  my %hash_teach = %{$refCONTEXT -> {'base_teachers'}};
+  my $hash_teach = $refCONTEXT -> {'base_teachers'};
   my $teacher_id = $refCONTEXT -> {'teacher'};
-
-  if ($hash_teach{$teacher_id}) {
-    my $refarray = $hash_teach{$teacher_id}->{$key};
+  if ($hash_teach -> {$teacher_id} -> {'discount'}) {
+    $refCONTEXT -> {discount_text} = $hash_teach-> {$teacher_id} -> {'discount'};
+    # print STDERR " discount_text = $refCONTEXT->{discount_text} \n";
+  }
+  if ($hash_teach->{$teacher_id}) {
+    my $refarray = $hash_teach -> {$teacher_id} -> {$key};
     # print join(',',$refarray)."\n";
     $refCONTEXT -> {data} = $refarray;
     # print "OK\n";
   }
   else {
-    print " NOT OK\n";
-    exit;
+    print STDERR "NOT OK __LINE__\n";
   }
   # if ($CONTEXT{'id'} == 1) {
   #   $refCONTEXT -> {data} = [[1,2,3],[4,5,6]];
@@ -43,16 +45,16 @@ sub table_price {
   my ($refCONTEXT,$key) = @_;
   # print join(',',@{$refCONTEXT -> {data}})."\n";
 
-  my @array = @{$refCONTEXT -> {data}};
+  my $table = $refCONTEXT -> {data} || [];
   my $count = 0;
 
   # Таблица цен на услуги
   my $html_table_price ="<table class=table_price>\n";
 
-  foreach my $el_ar (@array) {
-    # print "Элементы массива данных $el_ar\n";
+  foreach my $table_str (@$table) {
+    # print "Ссылка на массив (строку таблицы) $el_ar\n";
     $html_table_price.="<tr>\n";
-    foreach my $el (@{ $el_ar }) {
+    foreach my $el (@{ $table_str }) {
       if ($count == 0) {
         $html_table_price.= "<th>$el</th>\n";
       }
@@ -64,6 +66,9 @@ sub table_price {
   $count = 1;
   }
   $html_table_price.="\n</table>";
+  # добавление текста про скидку,если есть
+  $html_table_price .= wrap_html($refCONTEXT -> {discount_text}) if $refCONTEXT -> {discount_text};
+  # print STDERR "$html_table_price\n";
   # print "$html_table_price\n";
   # exit;
 
@@ -171,5 +176,10 @@ sub table_price {
   $refCONTEXT -> {$key} -> {'css'} = $css_table_price;
   $refCONTEXT -> {$key} -> {'html'} = $html_table_price;
   $refCONTEXT -> {$key} -> {'js'} = $js_table_price;
+}
+
+sub wrap_html{
+  my $data = shift;
+  return '<span style="font-size:90%;">'.$data.'</span>';
 }
 1;

@@ -74,6 +74,7 @@ EOF
   $data.= $refCONTEXT->{header}->{css} || '';
   $data.= $refCONTEXT->{main_menu}->{css} || '';
   $data.= $refCONTEXT->{menu_teachers_by_subjects}->{css} || '';
+  $data.= $refCONTEXT->{text_for_place_teachers}->{css} || '';
   $data.= $refCONTEXT->{form_order_call}->{css} || '';
   $data.= $refCONTEXT->{collect_teachers}->{css} || '';
   $data.= $refCONTEXT->{links_to_teachers}->{css} || '';

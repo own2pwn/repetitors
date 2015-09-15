@@ -61,7 +61,7 @@ sub form_order_call {
   /* Бордер(серая рамка), отступы(внутри и снаружи), ширина, для формы заказа звонка */
   .frame {
         border-radius:15px;
-        border:2px solid #eaedf0;
+        border:2px solid #bbb;
         width:100%;
         margin:45px auto 45px 5%;
         padding:25px 2%;
