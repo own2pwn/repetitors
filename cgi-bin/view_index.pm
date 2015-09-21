@@ -196,6 +196,7 @@ $data.= <<"EOF";
     $refCONTEXT->{'header'}->{js}
     $refCONTEXT->{'main_menu'}->{js}
     $refCONTEXT->{'contacts_filials'}->{js}
+    $refCONTEXT->{'insert_cookieks'}->{js}
   </script>
 
 EOF

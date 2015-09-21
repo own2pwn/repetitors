@@ -41,7 +41,6 @@ sub form_order_call {
 
   foreach my $id (@$sort_order) {
     my $text = $hash_types_forms->{$id} -> [0];
-    print STDERR "$id = $text\n";
     $html_form_order_call.= "
     <div class=frame>
         <span class=phrase_form> $text </span>

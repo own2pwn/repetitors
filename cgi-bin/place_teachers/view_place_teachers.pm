@@ -178,6 +178,7 @@ $data.= <<"EOF";
     $refCONTEXT->{'header'}->{js}
     $refCONTEXT->{form_order_call}->{js}
     $refCONTEXT->{'main_menu'}->{js}
+    $refCONTEXT->{'insert_cookieks'}->{js}
   </script>
 EOF
   $data .= ($refCONTEXT->{api_js} == 1) ? $refCONTEXT->{'metrica_analytics_js'}->{js} : '';

@@ -26,6 +26,7 @@ use module__footer;
 
 use module__insert_contact_js;
 use module__metrica_analytics_js;
+use module__insert_cookieks;
 
 use routing_index;
 use view_index;
@@ -36,6 +37,7 @@ use build_path;
 use http;
 use collapse;
 use wf;
+use md5;
 
 my %CONTEXT = ('min' => 0, collapse => $c->{collapse}, domain => $c -> {domain}, api_js => $c -> {api_js});
 base_teachers::start(\%CONTEXT,'base_teachers');
@@ -76,6 +78,7 @@ sub App {
 
                       module__insert_contact_js::start(\%CONTEXT,'insert_contact_js');
                       module__metrica_analytics_js::start(\%CONTEXT,'metrica_analytics_js');
+                      module__insert_cookieks::start(\%CONTEXT,'insert_cookieks');
 
 
                       view_index::start(\%CONTEXT,'view_index');

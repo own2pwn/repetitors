@@ -27,15 +27,18 @@ sub base_types_forms {
   my ($refCONTEXT,$key) = @_;
 
   my %base_types_forms = (
-    'summary_mathematics_physics'  => ['Разместить резюме репетитора по математике (алгебре/геометрии) или физике)', 'математика (алгебра/геометрия) или физика'],
+    'summary_mathematics_physics'  => ['Разместить резюме репетитора по математике (алгебре/геометрии) или физике', 'математика (алгебра/геометрия) или физика'],
     'summary_russian_language'     => ['Разместить резюме репетитора по русскому языку (литературе):',               'русский язык (литература)'],
     'summary_english_language'     => ['Разместить резюме репетитора по английскому языку:',                         'английский язык'],
+    'summary_any_subject'          => ['Разместить резюме репетитора по любому предмету:',                         ''],
                        );
 
   $refCONTEXT -> {$key} = \%base_types_forms;
 
   $refCONTEXT -> {$key.'_sort_order'} =
-    ['summary_mathematics_physics',
+    [
+     'summary_any_subject',
+     'summary_mathematics_physics',
      'summary_russian_language',
      'summary_english_language',
     ];

@@ -31,6 +31,7 @@ use module__footer;
 
 use module__insert_contact_js;
 use module__metrica_analytics_js;
+use module__insert_cookieks;
 
 use lib './';
 use base_types_forms;
@@ -47,6 +48,8 @@ use build_path;
 use http;
 use collapse;
 use wf;
+use md5;
+use md5;
 
 use lib '../css/';
 use base_css;
@@ -57,9 +60,9 @@ $CONTEXT{'hash_cgi'} = cgi_url::CGI_hash();
 # Построили url из {cgi_key} = cgi_value и сохранили url по ключу formed_url
 $CONTEXT{'formed_url'} = cgi_url::proccesing_url_keys($CONTEXT{'hash_cgi'});
 
-$CONTEXT{App} = \&App;
-routing_place_teachers::start(\%CONTEXT);
-# test_start();
+# $CONTEXT{App} = \&App;
+# routing_place_teachers::start(\%CONTEXT);
+test_start();
 
 
 
@@ -81,6 +84,8 @@ sub App {
 
                       module__insert_contact_js::start(\%CONTEXT,'insert_contact_js');
                       module__metrica_analytics_js::start(\%CONTEXT,'metrica_analytics_js');
+                      module__insert_cookieks::start(\%CONTEXT,'insert_cookieks');
+
                       view_place_teachers::start(\%CONTEXT,'view_all_teachers');
 
                       print collapse::simple_collapse(\%CONTEXT,$CONTEXT{'view_all_teachers'});

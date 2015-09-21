@@ -45,8 +45,15 @@ sub Routing {
   # write_env::start('./../env.txt');
   wf::save_to_file($path_log,'');
 
+  # print "RESULT = ".check::check_cookies_with_time_random_word();
+
+  # Не существует cookie или его содержимое неверно: A != md5(B)
+  # Делаем это чтобы боты не могли пройти
+  if (!check::check_cookies_with_time_random_word()) {
+    http::redirect(302,$refCONTEXT -> {domain});
+  }
   # Главная страница /cgi-bin/order_call/order_call_3.pl
-  if (!$ENV{'QUERY_STRING'} && $ENV{'REQUEST_URI'} eq $ENV{SCRIPT_NAME}) {
+  elsif (!$ENV{'QUERY_STRING'} && $ENV{'REQUEST_URI'} eq $ENV{SCRIPT_NAME}) {
     wf::add_to_file($path_log,
       "Пришли на $ENV{SCRIPT_NAME} (заказ звонка) без параметров редирект на $refCONTEXT->{domain}\n\n");
     http::redirect(302,$refCONTEXT -> {domain});
@@ -64,12 +71,6 @@ sub exists_param_in_url {
   my $cur_url = '?'.$ENV{'QUERY_STRING'};
   wf::add_to_file($path_log,"Введенный: $cur_url\n");
   wf::add_to_file($path_log,"Собранный: $formed_url\n");
-
-  correct_keys($refCONTEXT,$cur_url);
-}
-
-sub correct_keys {
-  my ($refCONTEXT, $cur_url) = @_;
 
   my $teacher_id = $refCONTEXT -> {'teacher'};
   my $region = $refCONTEXT -> {'region'};

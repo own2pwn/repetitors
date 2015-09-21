@@ -143,7 +143,7 @@ sub form_order_call {
 
   }());
 EOF
-print STDERR $js_form_order_call;
+
   my $js_form_order_call_min =<<EOF;
 EOF
 
