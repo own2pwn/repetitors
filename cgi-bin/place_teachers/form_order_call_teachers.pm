@@ -76,11 +76,10 @@ sub form_order_call {
   function get_form (Xhr) {
     addScr(Xhr.responseText,undefined,undefined);
     var subject_input = getByID('summary_any_subject_sub');
-    var ph_input      = getByID('summary_any_subject_ph');
-    subject_input.className   = 'form_style';
-    subject_input.value       = '';
-    subject_input.placeholder ='Введите предмет';
-    subject_input.type        = 'inline';
+    subject_input.className            = 'form_style';
+    subject_input.value                = '';
+    subject_input.placeholder          ='Введите предмет';
+    subject_input.type                 = 'inline';
     subject_input.style.marginBottom   = '0';
   }
 

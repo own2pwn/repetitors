@@ -84,7 +84,7 @@ sub App {
 
                       module__insert_contact_js::start(\%CONTEXT,'insert_contact_js');
                       module__metrica_analytics_js::start(\%CONTEXT,'metrica_analytics_js');
-                      module__insert_cookieks::start(\%CONTEXT,'insert_cookieks');
+                      module__insert_cookieks::start(\%CONTEXT,'insert_cookies');
 
                       view_place_teachers::start(\%CONTEXT,'view_all_teachers');
 

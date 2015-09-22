@@ -124,7 +124,7 @@ sub form_order_call {
       text_all_form+="<form action='$CONTEXT{domain}/cgi-bin/order_call_place_teachers/order_call_place_teachers.pl'>";
              text_all_form+= "<input type=hidden name=action value=order_call_place_teachers>";
              text_all_form+= "<input id="+attributeFiled+"_sub type=hidden name=sub value='" + attributeFiled + "'>";
-             text_all_form+="<input id="+attributeFiled+"_ph class=form_style ";
+             text_all_form+="<input class=form_style ";
                        text_all_form+= "name='ph' ";
                        text_all_form+= "type='text' maxlength='255' ";
                        text_all_form+= "placeholder='Введите телефон' /> <br>";

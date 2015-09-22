@@ -5,16 +5,13 @@ use strict;
 
 # use Data::Dumper;
 
-# use lib '../';
-# use config;
-# my $c = config::settings();
-
-
-# use lib '../my/';
+use lib '../my/build_path.pm';
 # use cgi_url;
 # use http;
 # use wf;
 # use write_env;
+use build_path;
+use check;
 
 
 # my %CONTEXT = ('min' => 0, collapse => $c->{collapse}, domain => $c -> {domain});
@@ -43,11 +40,13 @@ sub Routing {
   $refCONTEXT -> {'ph'}  = cgi_url::decode($refCONTEXT -> {'hash_cgi'} -> {'ph'})  || '';
 
   wf::save_to_file($path_log,"");
-  # wf::save_to_file($path_log,"sub = ".$refCONTEXT -> {'sub'}."\n\n");
-  # wf::save_to_file($path_log,"ph = ".$refCONTEXT -> {'ph'}."\n\n");
 
+  # Делаем это чтобы боты не могли пройти
+  if (!check::check_cookies_with_time_random_word()) {
+    http::redirect(302, build_path::place_teachers($refCONTEXT->{domain}));
+  }
   # Главная страница /cgi-bin/order_call_place_teachers/order_call_place_teachers.pl
-  if (!$ENV{'QUERY_STRING'} && $ENV{'REQUEST_URI'} eq $ENV{SCRIPT_NAME}) {
+  elsif (!$ENV{'QUERY_STRING'} && $ENV{'REQUEST_URI'} eq $ENV{SCRIPT_NAME}) {
     wf::add_to_file($path_log,
       "Пришли на $ENV{SCRIPT_NAME} (заказ звонка для размещения преподавателя) без параметров редирект на $refCONTEXT->{domain}\n\n");
     http::redirect(302,$refCONTEXT -> {domain});

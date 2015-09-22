@@ -137,16 +137,6 @@ sub menu {
   </div>
 EOF
 
-# СТАРЫЙ КОД ДЛЯ КРЕСТИКА
-# .cross{
-#   font-size: 200%;
-#   line-height: .5;
-#   width: 2%;
-#   margin: 2px 2% 2px 97%;
-#   cursor: pointer;
-#   color: #666;
-#   /*border: 2px solid brown;*/
-# }
 
   my $css_menu = column_css::column_with_param('.main_table_column_h_menu',
                                                 'width: 96%;',
@@ -245,8 +235,8 @@ EOF
     /*border: 2px solid black*/
   }
 ';
-# margin-right:-5px;
-# margin-top:-5px;
+
+
 # офрмление пунктов меню(один пункт span, а другой a)
 my $item_menu = '
   font-size: 95%;

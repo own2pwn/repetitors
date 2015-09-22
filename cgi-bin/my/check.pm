@@ -4,6 +4,9 @@ use strict;
 
 use Data::Dumper;
 
+use lib './';
+use md5;
+use cookies;
 # СКРИПТ СОБИРАЮЩИЕ РАЗНЫЕ ПУТИ
 
 
@@ -16,7 +19,6 @@ sub check_cookies_with_time_random_word {
   # warn "cookies = $ENV{HTTP_COOKIE}\n\n";
   # получаем хэш с куками
   my $cookies = cookies::get_cookies();
-  # warn Dumper($cookies);
   my $c = $cookies->{possible_to_request_call} || '';
   if ($c){
     my ($key, $value) = split(/::::/, $c);

@@ -32,12 +32,13 @@ use wf;
 use md5;
 use cookies;
 use check;
+use env;
 
 use lib './';
 use routing_order_call;
 use view_order_call;
 
-my %CONTEXT = ('min' => 0, config => $c, collapse => $c->{collapse}, domain => $c -> {domain} );
+my %CONTEXT = ('min' => 0, config => $c, collapse => $c->{collapse}, domain => 'http://'.($ENV{HTTP_HOST} || '127.0.0.1') );
 base_teachers::start(\%CONTEXT,'base_teachers');
 
 
@@ -193,10 +194,20 @@ sub Preparation_For_Sending_Email {
       # print ($mail,$subject,"Заказ звонка \n Телефон:".$phone."\n Регион:".$region);
       # print "<p>".$mail.$subject."Заказ звонка \n Телефон:".$phone.
       # "\n Преподаватель: ".$teacher_text."\n Регион: ".$region_text."</p>\n";
+      # send_mail::send_mail(
+      #   $mail,
+      #   $subject,
+      #   "Заказ звонка \n Телефон: ".$phone."\n Преподаватель: ".$teacher_text."\n Регион: ".$region_text."\n"
+      # );
       send_mail::send_mail(
         $mail,
         $subject,
-        "Заказ звонка \n Телефон: ".$phone."\n Преподаватель: ".$teacher_text."\n Регион: ".$region_text."\n"
+        "Заказ звонка\n".
+        "Телефон: ".$phone."\n".
+        "Преподаватель: ".$teacher_text."\n".
+        "Регион: ".$region_text."\n".
+        "IP: ".env::get_ip()."\n".
+        "User-Agent: ".$ENV{HTTP_USER_AGENT}."\n"
       );
     }
   }

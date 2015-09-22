@@ -24,7 +24,7 @@ onload_monitor($phone,$region,$ip,$user_agent);
 #my $subject="Заказали звонок в $hour:$min:$sec $day $$ref_nmonth $year\n";
 #print $subject."\n";
 
-
+# СТАРЫЙ КОД (КАК ПЕРЕПИШЕШЬ ORDER_CALL_3.PL, УДАЛЯЙ)
 
 
 ################################################

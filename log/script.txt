@@ -1,6 +1,4 @@
-Введенный: ?action=order_call&id=1&region=call_Balashiha&ph=890509231
-Собранный: ?action=order_call&id=1&region=call_Balashiha&ph=890509231
+Введенный: ?action=order_call&id=1&region=Novokosino&ph=2131312321313
+Собранный: ?action=order_call&id=1&region=Novokosino&ph=2131312321313
 Запуск приложения /cgi-bin/order_call/order_call_3.pl
-
-Запуск приложения (это главная страница)
 

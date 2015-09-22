@@ -181,7 +181,8 @@ sub Preparation_For_Sending_Email {
       "Заказ звонка на размещение репетитора\n".
       "Телефон: ".$ph."\n".
       "Предмет: ".$subject_place."\n".
-      "IP: ".env::get_ip()."\n"
+      "IP: ".env::get_ip()."\n".
+      "User-Agent: ".$ENV{HTTP_USER_AGENT}."\n"
     );
   }
   # Будем писать в логи

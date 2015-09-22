@@ -39,7 +39,12 @@ use collapse;
 use wf;
 use md5;
 
-my %CONTEXT = ('min' => 0, collapse => $c->{collapse}, domain => $c -> {domain}, api_js => $c -> {api_js});
+my %CONTEXT = (
+   'min' => 0, collapse => $c->{collapse},
+   domain => 'http://'.$ENV{HTTP_HOST} || '127.0.0.1',
+   api_js => $c -> {api_js}
+);
+
 base_teachers::start(\%CONTEXT,'base_teachers');
 base_links_to_teachers::start(\%CONTEXT,'base_links_to_teachers');
 
