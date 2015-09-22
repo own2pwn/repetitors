@@ -73,6 +73,7 @@ sub info {
   my $decode_ph = cgi_url::decode($CONTEXT{'hash_cgi'}{'ph'}) || '';
   return {
      subj => {
+        # Валидация отключена
         valid => \&Validate_Subject_On_Place,
         value => cgi_url::decode($CONTEXT{'hash_cgi'}{'sub'}) || '',
         error => 'Неизвестный предмет',
@@ -131,14 +132,16 @@ sub Validate_Subject_On_Place {
   # id -- field order
   my $subject_on_place = $INFO -> {subj} -> {value};
 
-  my $ok = 0;
+  # Отключенная валидация
+  # my $ok = 0;
   if ($hash_subject_on_place->{$subject_on_place}) {
     # Текст для email
     my $email_text = $hash_subject_on_place -> {$subject_on_place} -> [1];
     $INFO -> {subj} -> {value} = $email_text;
-    $ok = 1;
+    # $ok = 1;
   }
-  return ($ok == 1) ? 1 : 0;
+  # return ($ok == 1) ? 1 : 0;
+  return 1;
 }
 
 # Формируем текст правильного ответа клиенту

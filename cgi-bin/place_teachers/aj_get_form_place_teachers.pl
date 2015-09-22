@@ -98,7 +98,6 @@ sub form_order_call {
 
   my $hash_types_forms = $refCONTEXT -> {'base_types_forms'} || {};
   my $sort_order       = $refCONTEXT -> {'base_types_forms_sort_order'} || [];
-  # Dumper($hash_types_forms || 'NULL');
 
   # Собираем строку (массив JS) имен полей и полей заказа (одновременно) звонка
   my $str_field_name = '[';
@@ -124,7 +123,7 @@ sub form_order_call {
 
       text_all_form+="<form action='$CONTEXT{domain}/cgi-bin/order_call_place_teachers/order_call_place_teachers.pl'>";
              text_all_form+= "<input type=hidden name=action value=order_call_place_teachers>";
-             text_all_form+= "<input type=hidden name=sub value='" + attributeFiled + "'>";
+             text_all_form+= "<input id="+attributeFiled+"_sub type=hidden name=sub value='" + attributeFiled + "'>";
              text_all_form+="<input class=form_style ";
                        text_all_form+= "name='ph' ";
                        text_all_form+= "type='text' maxlength='255' ";

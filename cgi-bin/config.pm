@@ -15,26 +15,29 @@ my $trigger = 0;
 sub settings {
   if ($trigger == 0) {
     return {
-      domain =>     'http://127.0.0.1/',
+      domain    => 'http://127.0.0.1/',
       main_path => '/home_1/andrey7/www/mat-repetitor.ru/',
-      collapse => 0, # Свертка html              0 –– выключена, 1 –– включена
-      api_js => 1,   # metrica,analytics,vk_comments и т.д.  0 –– выключена, 1 –– включена
+      collapse  => 0, # Свертка html              0 –– выключена, 1 –– включена
+      api_js    => 1, # metrica,analytics,vk_comments и т.д.  0 –– выключена, 1 –– включена
+      log_temp  => 1,
     }
   }
   elsif ($trigger == 1) {
     return {
-        domain =>    'http://mat-repetitor.ru/',
-        main_path =>'/home/andrey7/www/mat-repetitor.ru/',
-        collapse => 1,
-        api_js => 0,
+        domain    => 'http://mat-repetitor.ru/',
+        main_path => '/home/andrey7/www/mat-repetitor.ru/',
+        collapse  => 1,
+        api_js    => 0,
+        log_temp  => 0,
     }
   }
   elsif ($trigger == 2) {
     return {
-        domain =>    'http://mat-repetitor.ru.ngrok.com/',
-        main_path =>'/home/andrey7/www/mat-repetitor.ru/',
-        collapse => 1,
-        api_js => 0,
+        domain    => 'http://mat-repetitor.ru.ngrok.com/',
+        main_path => '/home/andrey7/www/mat-repetitor.ru/',
+        collapse  => 1,
+        api_js    => 0,
+        log_temp  => 0,
     }
   }
 }

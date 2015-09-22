@@ -67,12 +67,19 @@ sub form_order_call {
       }
   ';
 
-  # добавляем id репетитора ($refCONTEXT->{'teacher'})
+  # для формы, где можно ввести предмет при заказе звонка
+  # добавляем класс, чистим value, добавляем placeholder,
+  # визуализируем поле
   my $js_form_order_call =<<"EOF";
   _R('aj_get_form_place_teachers.pl',null,function(Xhr) { get_form(Xhr);},undefined,undefined);
 
   function get_form (Xhr) {
     addScr(Xhr.responseText,undefined,undefined);
+    var subject_input = getByID('summary_any_subject_sub');
+    subject_input.className   = 'form_style';
+    subject_input.value       = '';
+    subject_input.placeholder ='Введите предмет';
+    subject_input.type        = 'inline';
   }
 
 
